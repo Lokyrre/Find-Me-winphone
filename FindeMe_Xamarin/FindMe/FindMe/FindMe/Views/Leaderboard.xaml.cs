@@ -7,6 +7,7 @@ using FindMe.Helpers;
 using FindMe.ViewModels;
 
 using Xamarin.Forms;
+using FindMe.Models;
 
 namespace FindMe.Views
 {
@@ -17,9 +18,7 @@ namespace FindMe.Views
             Title = "Leaderboard";
             InitializeComponent();
             BindingContext = new LeaderboardViewModel();
-            list.Header = new Label { Text = "Meilleurs Scores" };
-            list.ItemsSource = Settings.HighScoresSettings;
-            list.ItemTemplate = new DataTemplate();
+            List<Score> listItems = Settings.HighScoresSettings; 
         }
     }
 }

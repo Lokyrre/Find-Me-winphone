@@ -13,11 +13,22 @@ namespace FindMe.Views
         public Home()
         {
             InitializeComponent();
-            bLeaderboard.Clicked += OnItemSelected;
-           
+            bLeaderboard.Clicked += OnLeaderboardSelected;
+            bOptions.Clicked += OnOptionsSelected;
+            bNewGame.Clicked += OnNewGameSelected;
         }
 
-        void OnItemSelected(object sender, EventArgs args)
+        private void OnNewGameSelected(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new EndGame(30));
+        }
+
+        private void OnOptionsSelected(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Options());
+        }
+
+        void OnLeaderboardSelected(object sender, EventArgs args)
         {
             Navigation.PushAsync(new Leaderboard());
         }
