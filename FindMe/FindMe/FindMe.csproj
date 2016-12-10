@@ -95,15 +95,19 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DoctorWhoGame.cs" />
     <Compile Include="Finish.xaml.cs">
       <DependentUpon>Finish.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Game.cs" />
     <Compile Include="GameView.xaml.cs">
       <DependentUpon>GameView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Menu.xaml.cs">
       <DependentUpon>Menu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MLPGame.cs" />
+    <Compile Include="PokemonGame.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -113,6 +117,51 @@
     <None Include="FindMe_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\bmlp1.png" />
+    <Content Include="Images\bmlp2.png" />
+    <Content Include="Images\bmlp3.png" />
+    <Content Include="Images\bmlp4.png" />
+    <Content Include="Images\bmlp5.png" />
+    <Content Include="Images\bmlp6.png" />
+    <Content Include="Images\bmlp7.png" />
+    <Content Include="Images\dw.png" />
+    <Content Include="Images\dw1.png" />
+    <Content Include="Images\dw2.png" />
+    <Content Include="Images\dw3.png" />
+    <Content Include="Images\dw4.png" />
+    <Content Include="Images\dw5.png" />
+    <Content Include="Images\dw6.png" />
+    <Content Include="Images\dw7.png" />
+    <Content Include="Images\dwb1.png" />
+    <Content Include="Images\dwb2.png" />
+    <Content Include="Images\dwb3.png" />
+    <Content Include="Images\dwb4.png" />
+    <Content Include="Images\dwb5.png" />
+    <Content Include="Images\dwb6.png" />
+    <Content Include="Images\dwb7.png" />
+    <Content Include="Images\epkm1.png" />
+    <Content Include="Images\epkm2.png" />
+    <Content Include="Images\epkm3.png" />
+    <Content Include="Images\epkm4.png" />
+    <Content Include="Images\epkm5.png" />
+    <Content Include="Images\epkm6.png" />
+    <Content Include="Images\epkm7.png" />
+    <Content Include="Images\mlp.png" />
+    <Content Include="Images\mlp1.png" />
+    <Content Include="Images\mlp2.png" />
+    <Content Include="Images\mlp3.png" />
+    <Content Include="Images\mlp4.png" />
+    <Content Include="Images\mlp5.png" />
+    <Content Include="Images\mlp6.png" />
+    <Content Include="Images\mlp7.png" />
+    <Content Include="Images\pkm.png" />
+    <Content Include="Images\pkm1.png" />
+    <Content Include="Images\pkm2.png" />
+    <Content Include="Images\pkm3.png" />
+    <Content Include="Images\pkm4.png" />
+    <Content Include="Images\pkm5.png" />
+    <Content Include="Images\pkm6.png" />
+    <Content Include="Images\pkm7.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

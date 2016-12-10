@@ -22,9 +22,31 @@ namespace FindMe
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private Frame rootFrame = Window.Current.Content as Frame;
         public MainPage()
         {
             this.InitializeComponent();
+        }
+
+        private void MPL_Click(object sender, RoutedEventArgs e)
+        {
+            GoToGameView("MLP");
+        }
+
+        private void DoctoWho_Click(object sender, RoutedEventArgs e)
+        {
+            GoToGameView("DoctoWho");
+        }
+
+        private void Pokemon_Click(object sender, RoutedEventArgs e)
+        {
+            GoToGameView("Pokemon");
+        }
+
+        private void GoToGameView(string game)
+        {
+            Application.Current.Resources["game"] = game;
+            rootFrame.Navigate(typeof(GameView));
         }
     }
 }
