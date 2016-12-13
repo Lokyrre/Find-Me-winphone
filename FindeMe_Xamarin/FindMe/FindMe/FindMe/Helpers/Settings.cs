@@ -1,6 +1,8 @@
 // Helpers/Settings.cs
 using Plugin.Settings;
 using Plugin.Settings.Abstractions;
+using System.Collections.Generic;
+using FindMe.Models;
 
 namespace FindMe.Helpers
 {
@@ -30,8 +32,14 @@ namespace FindMe.Helpers
         private const string NbrIconKey = "nbrIcon_Key";
         private static readonly int NbrIconDefault = 5;
 
-        private const string HighScoreKey = "highScore_Key";
-        private static readonly double HighScoreDefault = 0;
+        private const string HighScoresKey = "highScores_Key";
+        private static readonly List<Score> HighScoresDefault = new List<Score>();
+
+        private const string IsSongEnabledKey = "isSongEnabled_key";
+        private static readonly bool IsSongEnabledDefault = true;
+
+        private const string IsVibrationEnabledKey = "isHard_key";
+        private static readonly bool IsVibrationEnabledDefault = true;
 
         #endregion
 
@@ -72,15 +80,39 @@ namespace FindMe.Helpers
             }
         }
 
-        public static double HighScoreSettings
+        public static List<Score> HighScoresSettings
         {
             get
             {
-                return AppSettings.GetValueOrDefault<double>(HighScoreKey, HighScoreDefault);
+                return AppSettings.GetValueOrDefault<List<Score>>(HighScoresKey, HighScoresDefault);
             }
             set
             {
-                AppSettings.AddOrUpdateValue<double>(HighScoreKey, value);
+                AppSettings.AddOrUpdateValue<List<Score>>(HighScoresKey, value);
+            }
+        }
+
+        public static bool IsSongEnabledSettings
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault<bool>(IsSongEnabledKey, IsSongEnabledDefault);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue<bool>(IsSongEnabledKey, value);
+            }
+        }
+
+        public static bool IsVibrationEnabledSettings
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault<bool>(IsVibrationEnabledKey, IsVibrationEnabledDefault);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue<bool>(IsVibrationEnabledKey, value);
             }
         }
 
