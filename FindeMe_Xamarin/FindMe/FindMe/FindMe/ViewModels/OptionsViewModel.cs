@@ -11,6 +11,10 @@ namespace FindMe.ViewModels
     class OptionsViewModel : INotifyPropertyChanged
     {
         private static bool hardGame;
+        private static bool sound;
+        private static bool vibration;
+        private static int nbIcones;
+        private static string username;
 
         public bool HardGame
         {
@@ -20,7 +24,66 @@ namespace FindMe.ViewModels
                 hardGame = value;
                 Settings.IsHardSettings = hardGame;
                 OnPropertyChanged("HardGame");
+            }
+        }
 
+        public bool Sound
+        {
+            get
+            {
+                return sound;
+            }
+
+            set
+            {
+                sound = value;
+                Settings.IsSongEnabledSettings = sound;
+                OnPropertyChanged("Sound");
+            }
+        }
+
+        public bool Vibration
+        {
+            get
+            {
+                return vibration;
+            }
+
+            set
+            {
+                vibration = value;
+                Settings.IsVibrationEnabledSettings = vibration;
+                OnPropertyChanged("Vibration");
+            }
+        }
+
+        public int NbIcones
+        {
+            get
+            {
+                return nbIcones;
+            }
+
+            set
+            {
+                nbIcones = value;
+                Settings.nbrIconSettings = nbIcones;
+                OnPropertyChanged("NbIcones");
+            }
+        }
+
+        public string Username
+        {
+            get
+            {
+                return username;
+            }
+
+            set
+            {
+                username = value;
+                Settings.UsernameSettings = username;
+                OnPropertyChanged("Username");
             }
         }
 
@@ -34,6 +97,10 @@ namespace FindMe.ViewModels
         public OptionsViewModel()
         {
             HardGame = Settings.IsHardSettings;
+            Sound = Settings.IsSongEnabledSettings;
+            Vibration = Settings.IsVibrationEnabledSettings;
+            NbIcones = Settings.nbrIconSettings;
+            Username = Settings.UsernameSettings;
         }
     }
 }

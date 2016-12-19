@@ -3,6 +3,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FindMe.Views.Options">
   <StackLayout>
-    <Switch IsToggled="{Binding HardGame}" ></Switch>
+    <Label Text="Nom d'utilisateur:"/>
+      <Entry Text="{Binding Username}" />
+    <Label Text="Mode Difficile:"/>
+      <Switch IsToggled="{Binding HardGame}" ></Switch>
+    <Label Text="Nombre d'icone:"/>
+      <Picker SelectedIndex="{Binding NbIcones}" HorizontalOptions="FillAndExpand">
+        <Picker.Items>
+          <x:String>3</x:String>
+          <x:String>5</x:String>
+          <x:String>7</x:String>
+        </Picker.Items>
+      </Picker>
+    <Label Text="Son:"/>
+      <Switch IsToggled="{Binding Sound}" ></Switch>
+    <Label Text="Vibreur:"/>
+      <Switch IsToggled="{Binding Vibration}" ></Switch>
   </StackLayout>
 </ContentPage>

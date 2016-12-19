@@ -56,7 +56,7 @@ namespace FindMe.Helpers
         private const string IsSongEnabledKey = "isSongEnabled_key";
         private static readonly bool IsSongEnabledDefault = true;
 
-        private const string IsVibrationEnabledKey = "isHard_key";
+        private const string IsVibrationEnabledKey = "isVibrationEnabledKey";
         private static readonly bool IsVibrationEnabledDefault = true;
 
         #endregion
