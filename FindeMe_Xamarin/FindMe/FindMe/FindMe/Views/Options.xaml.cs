@@ -15,6 +15,7 @@ namespace FindMe.Views
         {
             Title = "Options";
             InitializeComponent();
+            BindingContext = new OptionsViewModel();
         }
     }
 }

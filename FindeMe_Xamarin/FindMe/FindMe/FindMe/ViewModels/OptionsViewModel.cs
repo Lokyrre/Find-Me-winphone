@@ -10,7 +10,7 @@ namespace FindMe.ViewModels
 {
     class OptionsViewModel : INotifyPropertyChanged
     {
-        private static bool hardGame = true;
+        private static bool hardGame;
 
         public bool HardGame
         {
@@ -29,6 +29,11 @@ namespace FindMe.ViewModels
         private void OnPropertyChanged(string propertyName)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public OptionsViewModel()
+        {
+            HardGame = Settings.IsHardSettings;
         }
     }
 }

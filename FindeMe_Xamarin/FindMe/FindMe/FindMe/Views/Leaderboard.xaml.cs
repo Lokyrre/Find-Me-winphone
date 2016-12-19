@@ -17,6 +17,7 @@ namespace FindMe.Views
         {
             Title = "Leaderboard";
             InitializeComponent();
+            BindingContext = new LeaderboardViewModel();
             List<Score> listItems = Settings.HighScoresSettings; 
         }
     }
