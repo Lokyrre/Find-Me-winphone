@@ -1,5 +1,15 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FindMe.Views.EndGame">
-  <ContentView.Content>
-  </ContentView.Content>
-</ContentView>
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FindMe.Views.EndGame">
+  <StackLayout>
+    <Label Text="&#13;&#10;&#13;&#10;Partie Terminer&#13;&#10;"/>
+    <Label Text="{Binding Username}" />
+    <Label Text="&#13;&#10;Score !&#13;&#10;"/>
+    <Label x:Name="scoreGame"/>
+    <Label Text="Le saviez-vous ?"/>
+    <Label x:Name="fact"/>
+    <Button x:Name="bRestart" Text="Rejouer" />
+    <Button x:Name="bMenu" Text="Menu" />
+  </StackLayout>
+</ContentPage>
