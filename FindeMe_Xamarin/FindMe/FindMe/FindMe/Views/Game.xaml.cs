@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FindMe.Helpers;
+using FindMe.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +15,39 @@ namespace FindMe.Views
         public Game()
         {
             InitializeComponent();
+            BindingContext = new GameViewModel();
+            Loading();
         }
+
+        void Loading()
+        {
+            Random r = new Random();
+            
+            for(int i = 0; i < 3; i++)
+            {
+                var img = new Image();
+                //img.Source = ""; //TODO récupérer image aléatoire de la liste correspondante
+                img.BackgroundColor = Color.FromRgb(r.Next(255), r.Next(255), r.Next(255));
+                img.HeightRequest = 60;
+                img.WidthRequest = 60;
+                var tapGestureRecognizer = new TapGestureRecognizer();
+                tapGestureRecognizer.Tapped += (s, e) => {
+                    Image imgTemp = (Image)s;
+                    imgTemp.BackgroundColor = Color.Red;
+                    aLayout.Children.Clear();
+                    Loading();
+                };
+                img.GestureRecognizers.Add(tapGestureRecognizer);
+                aLayout.Children.Add(img);
+
+                AbsoluteLayout.SetLayoutBounds(img, new Rectangle(1.0 * r.Next(100) / 100, 1.0 * r.Next(100) / 100, .1, .1));
+                AbsoluteLayout.SetLayoutFlags(img, AbsoluteLayoutFlags.All);
+
+                
+            }
+            
+
+        }
+
     }
 }
