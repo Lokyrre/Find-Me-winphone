@@ -1,12 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CarouselViewSample"
+             xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
              x:Class="FindMe.Views.Home">
-  <StackLayout>
-    <Label Text="FindMe !" VerticalOptions="Center" />
-    <Button x:Name="bNewGame" Text="Jouer" />
-    <Button x:Name="bLeaderboard" Text="Leaderboard" />
-    <Button x:Name="bOptions" Text="Options" />
-  </StackLayout>
- 
-</ContentPage>
+
+    <StackLayout>
+      <cv:CarouselView ItemsSource="{Binding GameTypes}" x:Name="CarouselTypeGame">
+        <cv:CarouselView.ItemTemplate>
+          <DataTemplate>
+            <Grid>
+              <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+              </Grid.RowDefinitions>
+              <Image Grid.RowSpan="2" Aspect="AspectFill" Source="{Binding ImageUrl}"/>
+              <StackLayout Grid.Row="1" Padding="12">
+                <Label TextColor="White" Text="{Binding Name}" FontSize="16" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+              </StackLayout>
+            </Grid>
+          </DataTemplate>
+        </cv:CarouselView.ItemTemplate>
+      </cv:CarouselView>
+      <Label Text="FindMe !" VerticalOptions="Center" />
+      <Button x:Name="bNewGame" Text="Jouer" />
+      <Button x:Name="bLeaderboard" Text="Leaderboard" />
+      <Button x:Name="bOptions" Text="Options" />
+    </StackLayout>
+
+  </ContentPage>
