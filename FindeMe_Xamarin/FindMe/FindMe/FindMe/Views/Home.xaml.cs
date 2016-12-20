@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FindMe.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,12 +14,13 @@ namespace FindMe.Views
         public Home()
         {
             InitializeComponent();
+            BindingContext = new HomeViewModel();
             bLeaderboard.Clicked += OnLeaderboardSelected;
             bOptions.Clicked += OnOptionsSelected;
             bNewGame.Clicked += OnNewGameSelected;
         }
 
-        private void OnNewGameSelected(object sender, EventArgs e)
+       private void OnNewGameSelected(object sender, EventArgs e)
         {
             Navigation.PushAsync(new EndGame(30));
         }
