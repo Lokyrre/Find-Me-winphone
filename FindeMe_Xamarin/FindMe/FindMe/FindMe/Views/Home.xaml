@@ -9,4 +9,16 @@
     <Button x:Name="bOptions" Text="Options" />
   </StackLayout>
 
+<<<<<<< HEAD
 </ContentPage>
+=======
+    <StackLayout>
+      
+      <Label Text="FindMe !" VerticalOptions="Center" />
+      <Button x:Name="bNewGame" Text="Jouer" />
+      <Button x:Name="bLeaderboard" Text="Leaderboard" />
+      <Button x:Name="bOptions" Text="Options" />
+    </StackLayout>
+
+  </ContentPage>
+>>>>>>> c769eee727bf809c15cff60ae1a100a8ab62f211
