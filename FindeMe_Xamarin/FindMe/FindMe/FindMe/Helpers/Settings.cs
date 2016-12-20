@@ -59,6 +59,9 @@ namespace FindMe.Helpers
         private const string IsVibrationEnabledKey = "isVibrationEnabledKey";
         private static readonly bool IsVibrationEnabledDefault = true;
 
+        private const string ListImageKey = "listImageKey";
+        private static readonly Dictionary<string, List<string>> listImageDefault = new Dictionary<string, List<string>>();
+
         #endregion
 
 

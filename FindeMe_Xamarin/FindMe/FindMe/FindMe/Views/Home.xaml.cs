@@ -20,7 +20,7 @@ namespace FindMe.Views
 
         private void OnNewGameSelected(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new EndGame(30));
+            Navigation.PushAsync(new Game());
         }
 
         private void OnOptionsSelected(object sender, EventArgs e)

@@ -8,5 +8,5 @@
     <Button x:Name="bLeaderboard" Text="Leaderboard" />
     <Button x:Name="bOptions" Text="Options" />
   </StackLayout>
- 
+
 </ContentPage>
