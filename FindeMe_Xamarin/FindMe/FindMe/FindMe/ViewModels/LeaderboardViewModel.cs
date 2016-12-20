@@ -36,6 +36,7 @@ namespace FindMe.ViewModels
 
         public LeaderboardViewModel()
         {
+            Settings.HighScoresSettings.Sort();
             ListItems = new ObservableCollection<Score>(Settings.HighScoresSettings);
         }
     }

@@ -35,23 +35,19 @@ namespace FindMe.Helpers
         private const string HighScoresKey = "highScores_Key";
         private static readonly List<Score> HighScoresDefault = new List<Score>
         {
-            new Score
-            {
-                GameMode = "Doctor Who",
-                IsHard = false,
-                NbrIcons = 5,
-                Username = "Toto",
-                ValueScore = 6358
-            },
+            new Score("Toto",6358,false,3,"Doctor Who"),
             new Score
             {
                 GameMode = "Doctor Who",
                 IsHard = false,
                 NbrIcons = 5,
                 Username = "Tata",
-                ValueScore = 352
-            }
-        };
+                ValueScore = 35269999
+            },
+            new Score()
+    };
+
+        
 
         private const string IsSongEnabledKey = "isSongEnabled_key";
         private static readonly bool IsSongEnabledDefault = true;
