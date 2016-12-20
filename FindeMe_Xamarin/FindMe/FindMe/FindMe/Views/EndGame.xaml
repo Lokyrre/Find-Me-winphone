@@ -5,7 +5,6 @@
   <StackLayout>
     <Label Text="&#13;&#10;&#13;&#10;Partie Terminer&#13;&#10;"/>
     <Label Text="{Binding Username}" />
-    <Label x:Name="newHighScore" />
     <Label Text="&#13;&#10;Score !&#13;&#10;"/>
     <Label x:Name="scoreGame"/>
     <Label Text="Le saviez-vous ?"/>
