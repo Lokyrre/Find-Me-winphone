@@ -6,7 +6,22 @@
              x:Class="FindMe.Views.Home">
 
     <StackLayout>
-      
+      <cv:CarouselView ItemsSource="{Binding GameTypes}" x:Name="CarouselTypeGame">
+        <cv:CarouselView.ItemTemplate>
+        <DataTemplate>
+            <Grid>
+              <Grid.RowDefinitions>
+                 <RowDefinition Height="*"/>
+             <RowDefinition Height="Auto"/>
+              </Grid.RowDefinitions>
+                 <Image Grid.RowSpan="2" Aspect="AspectFill" Source="{Binding ImageUrl}"/>
+                 <StackLayout Grid.Row="1" Padding="12">
+                 <Label TextColor="White" Text="{Binding Name}" FontSize="16" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+              </StackLayout>
+            </Grid>
+          </DataTemplate>
+        </cv:CarouselView.ItemTemplate>
+      </cv:CarouselView>
       <Label Text="FindMe !" VerticalOptions="Center" />
       <Button x:Name="bNewGame" Text="Jouer" />
       <Button x:Name="bLeaderboard" Text="Leaderboard" />
