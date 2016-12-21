@@ -66,6 +66,4 @@ namespace FindMe.Models
              return ((Score)obj).ValueScore.CompareTo(this.ValueScore);
          }
       }
-        
-    }
 }
