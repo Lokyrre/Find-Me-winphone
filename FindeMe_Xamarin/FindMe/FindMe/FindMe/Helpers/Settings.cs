@@ -29,6 +29,9 @@ namespace FindMe.Helpers
         private const string IsHardKey = "isHard_key";
         private static readonly bool IsHardDefault = false;
 
+        private const string NbrIconIndexKey = "nbrIconIndex_Key";
+        private static readonly int NbrIconIndexDefault = 5;
+
         private const string NbrIconKey = "nbrIcon_Key";
         private static readonly int NbrIconDefault = 5;
 
@@ -68,6 +71,18 @@ namespace FindMe.Helpers
             set
             {
                 AppSettings.AddOrUpdateValue<bool>(IsHardKey, value);
+            }
+        }
+
+        public static int nbrIconIndexSettings
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault<int>(NbrIconIndexKey, NbrIconDefault);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue<int>(NbrIconIndexKey, value);
             }
         }
 

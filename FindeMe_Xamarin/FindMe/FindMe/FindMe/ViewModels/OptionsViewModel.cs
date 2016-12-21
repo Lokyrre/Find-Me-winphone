@@ -13,6 +13,7 @@ namespace FindMe.ViewModels
         private static bool hardGame;
         private static bool sound;
         private static bool vibration;
+        private static int nbIconesIndex;
         private static int nbIcones;
         private static string username;
 
@@ -57,18 +58,18 @@ namespace FindMe.ViewModels
             }
         }
 
-        public int NbIcones
+        public int NbIconesIndex
         {
             get
             {
-                return nbIcones;
+                return nbIconesIndex;
             }
 
             set
             {
-                nbIcones = value;
-                Settings.nbrIconSettings = nbIcones;
-                OnPropertyChanged("NbIcones");
+                nbIconesIndex = value;
+                Settings.nbrIconIndexSettings = nbIconesIndex;
+                OnPropertyChanged("NbIconesIndex");
             }
         }
 
@@ -87,6 +88,21 @@ namespace FindMe.ViewModels
             }
         }
 
+        public int NbIcones
+        {
+            get
+            {
+                return nbIcones;
+            }
+
+            set
+            {
+                nbIcones = value;
+                Settings.nbrIconSettings = nbIconesIndex;
+                OnPropertyChanged("NbIcones");
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void OnPropertyChanged(string propertyName)
@@ -99,6 +115,7 @@ namespace FindMe.ViewModels
             HardGame = Settings.IsHardSettings;
             Sound = Settings.IsSongEnabledSettings;
             Vibration = Settings.IsVibrationEnabledSettings;
+            NbIconesIndex = Settings.nbrIconIndexSettings;
             NbIcones = Settings.nbrIconSettings;
             Username = Settings.UsernameSettings;
         }

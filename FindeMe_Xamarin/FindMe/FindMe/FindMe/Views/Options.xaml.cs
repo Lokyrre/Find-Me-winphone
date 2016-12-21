@@ -16,6 +16,11 @@ namespace FindMe.Views
             Title = "Options";
             InitializeComponent();
             BindingContext = new OptionsViewModel();
+            nbIcones.SelectedIndexChanged += (s, e) =>
+            {
+                OptionsViewModel o = new OptionsViewModel();
+                o.NbIcones = Int32.Parse(nbIcones.Items[nbIcones.SelectedIndex]);
+            };
         }
     }
 }

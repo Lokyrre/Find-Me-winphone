@@ -1,5 +1,6 @@
 ﻿{
   "dependencies": {
+    "CarouselView.FormsPlugin": "2.7.1",
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0",
     "Xam.Plugin.Geolocator": "3.0.4",
     "Xam.Plugins.Settings": "2.5.1",
