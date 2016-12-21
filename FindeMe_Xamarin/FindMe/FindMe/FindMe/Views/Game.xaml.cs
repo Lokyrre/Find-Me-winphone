@@ -22,8 +22,23 @@ namespace FindMe.Views
         void Loading()
         {
             Random r = new Random();
-            
-            for(int i = 0; i < 3; i++)
+
+            int nbIcones;
+
+            switch (Settings.nbrIconSettings)
+            {
+                case 1:
+                    nbIcones = 5;
+                    break;
+                case 2:
+                    nbIcones = 7;
+                    break;
+                default:
+                    nbIcones = 3;
+                    break;
+            }
+
+            for (int i = 0; i < nbIcones; i++)
             {
                 var img = new Image();
                 //img.Source = ""; //TODO récupérer image aléatoire de la liste correspondante
