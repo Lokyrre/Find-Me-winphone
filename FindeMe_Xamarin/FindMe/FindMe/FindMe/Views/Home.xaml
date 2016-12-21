@@ -1,16 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:CarouselViewSample"
-             xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FindMe.Views.Home">
+  <StackLayout>
+    <Label Text="FindMe !" VerticalOptions="Center" />
+    <Button x:Name="bNewGame" Text="Jouer" />
+    <Button x:Name="bLeaderboard" Text="Leaderboard" />
+    <Button x:Name="bOptions" Text="Options" />
+  </StackLayout>
 
-    <StackLayout>
-      
-      <Label Text="FindMe !" VerticalOptions="Center" />
-      <Button x:Name="bNewGame" Text="Jouer" />
-      <Button x:Name="bLeaderboard" Text="Leaderboard" />
-      <Button x:Name="bOptions" Text="Options" />
-    </StackLayout>
-
-  </ContentPage>
+</ContentPage>
