@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Plugin.Vibrate;
 
 using Xamarin.Forms;
 
@@ -49,6 +50,14 @@ namespace FindMe.Views
                 tapGestureRecognizer.Tapped += (s, e) => {
                     Image imgTemp = (Image)s;
                     imgTemp.BackgroundColor = Color.Red;
+                    if (Settings.IsVibrationEnabledSettings)
+                    {
+                        CrossVibrate.Current.Vibration(500);
+                    }
+                    if (Settings.IsSongEnabledSettings)
+                    {
+                       
+                    }
                     aLayout.Children.Clear();
                     Loading();
                 };

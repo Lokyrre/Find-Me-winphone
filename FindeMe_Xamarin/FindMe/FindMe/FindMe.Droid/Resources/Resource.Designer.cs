@@ -1855,6 +1855,8 @@ namespace FindMe.Droid
 			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ViewStubCompat_android_id = global::FindMe.Droid.Resource.Styleable.ViewStubCompat_android_id;
 			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ViewStubCompat_android_inflatedId = global::FindMe.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId;
 			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ViewStubCompat_android_layout = global::FindMe.Droid.Resource.Styleable.ViewStubCompat_android_layout;
+			global::Plugin.Vibrate.Resource.String.ApplicationName = global::FindMe.Droid.Resource.String.ApplicationName;
+			global::Plugin.Vibrate.Resource.String.Hello = global::FindMe.Droid.Resource.String.Hello;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::FindMe.Droid.Resource.Attribute.actionBarSize;
 		}
 		
@@ -4858,6 +4860,12 @@ namespace FindMe.Droid
 		
 		public partial class String
 		{
+			
+			// aapt resource value: 0x7f080027
+			public const int ApplicationName = 2131230759;
+			
+			// aapt resource value: 0x7f080026
+			public const int Hello = 2131230758;
 			
 			// aapt resource value: 0x7f08000f
 			public const int abc_action_bar_home_description = 2131230735;
