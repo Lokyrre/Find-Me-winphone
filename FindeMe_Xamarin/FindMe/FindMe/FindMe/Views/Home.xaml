@@ -1,13 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FindMe.Views.Home"
              xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions">
-  <StackLayout>
-    <Label Text="FindMe !" VerticalOptions="Center" />
-    <Button x:Name="bNewGame" Text="Jouer" />
-    <Button x:Name="bLeaderboard" Text="Leaderboard" />
-    <Button x:Name="bOptions" Text="Options" />
-  </StackLayout>
-
-</ContentPage>
+  <ContentPage>
+    <StackLayout>
+      <Label Text="FindMe !" VerticalOptions="Center" />
+      <Label Text="Doctor Who" VerticalOptions="Center" />
+      <Button x:Name="bNewGameDW" Text="Jouer" />
+      <Button x:Name="bLeaderboardDW" Text="Leaderboard" />
+      <Button x:Name="bOptionsDW" Text="Options" />
+    </StackLayout>
+  </ContentPage>
+  <ContentPage>
+    <StackLayout>
+      <Label Text="FindMe !" VerticalOptions="Center" />
+      <Label Text="Pokemon" VerticalOptions="Center" />
+      <Button x:Name="bNewGameP" Text="Jouer" />
+      <Button x:Name="bLeaderboardP" Text="Leaderboard" />
+      <Button x:Name="bOptionsP" Text="Options" />
+    </StackLayout>
+  </ContentPage>
+  <ContentPage>
+    <StackLayout>
+      <Label Text="FindMe !" VerticalOptions="Center" />
+      <Label Text="MLP" VerticalOptions="Center" />
+      <Button x:Name="bNewGameMLP" Text="Jouer" />
+      <Button x:Name="bLeaderboardMLP" Text="Leaderboard" />
+      <Button x:Name="bOptionsMLP" Text="Options" />
+    </StackLayout>
+  </ContentPage>
+</CarouselPage>

@@ -68,7 +68,7 @@ namespace FindMe.Views
         private void OnRestartSelected(object sender, EventArgs e)
         {
             AddScore();
-            Navigation.PushAsync(new Game());
+            Navigation.PushAsync(new Game(""));
         }
     }
 }

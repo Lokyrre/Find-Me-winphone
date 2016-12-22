@@ -47,6 +47,9 @@ namespace FindMe.Helpers
         private const string ListImageKey = "listImageKey";
         private static readonly Dictionary<string, List<string>> listImageDefault = new Dictionary<string, List<string>>();
 
+        private const string TypeGameKey = "TypeGeme_Key";
+        private static readonly int TypeGameDefault = 0;
+
         #endregion
 
 
@@ -78,7 +81,7 @@ namespace FindMe.Helpers
         {
             get
             {
-                return AppSettings.GetValueOrDefault<int>(NbrIconIndexKey, NbrIconDefault);
+                return AppSettings.GetValueOrDefault<int>(NbrIconIndexKey, NbrIconIndexDefault);
             }
             set
             {
@@ -131,6 +134,18 @@ namespace FindMe.Helpers
             set
             {
                 AppSettings.AddOrUpdateValue<bool>(IsVibrationEnabledKey, value);
+            }
+        }
+
+        public static int typeGameSettings
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault<int>(TypeGameKey, TypeGameDefault);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue<int>(TypeGameKey, value);
             }
         }
 

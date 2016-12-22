@@ -9,20 +9,38 @@ using Xamarin.Forms;
 
 namespace FindMe.Views
 {
-    public partial class Home : ContentPage
+    public partial class Home : CarouselPage
     {
         public Home()
         {
             InitializeComponent();
             BindingContext = new HomeViewModel();
-            bLeaderboard.Clicked += OnLeaderboardSelected;
-            bOptions.Clicked += OnOptionsSelected;
-            bNewGame.Clicked += OnNewGameSelected;
+            bLeaderboardDW.Clicked += OnLeaderboardSelected;
+            bOptionsDW.Clicked += OnOptionsSelected;
+            bNewGameDW.Clicked += OnNewGameDWSelected;
+
+            bLeaderboardP.Clicked += OnLeaderboardSelected;
+            bOptionsP.Clicked += OnOptionsSelected;
+            bNewGameP.Clicked += OnNewGamePSelected;
+
+            bLeaderboardMLP.Clicked += OnLeaderboardSelected;
+            bOptionsMLP.Clicked += OnOptionsSelected;
+            bNewGameMLP.Clicked += OnNewGameMLPSelected;
         }
 
-       private void OnNewGameSelected(object sender, EventArgs e)
+       private void OnNewGameDWSelected(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new Game());
+            Navigation.PushAsync(new Game("Doctor Who"));
+        }
+
+        private void OnNewGamePSelected(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Game("Pokemon"));
+        }
+
+        private void OnNewGameMLPSelected(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Game("MLP"));
         }
 
         private void OnOptionsSelected(object sender, EventArgs e)

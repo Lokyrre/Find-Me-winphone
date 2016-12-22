@@ -12,7 +12,7 @@ namespace FindMe.Views
 {
     public partial class Game : ContentPage
     {
-        public Game()
+        public Game(string typeGame)
         {
             InitializeComponent();
             BindingContext = new GameViewModel();
