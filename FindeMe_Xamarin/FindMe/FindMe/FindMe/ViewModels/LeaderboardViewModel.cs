@@ -12,6 +12,7 @@ namespace FindMe.ViewModels
 {
     class LeaderboardViewModel : INotifyPropertyChanged
     {
+        private int typeScore;
         private static ObservableCollection<Score> listItems = new ObservableCollection<Score>();
         public ObservableCollection<Score> ListItems
         {
@@ -23,7 +24,19 @@ namespace FindMe.ViewModels
                     listItems = value;
                     OnPropertyChanged("ListItems");
                 }
+            }
+        }
 
+        public int TypeScore
+        {
+            get
+            {
+                return typeScore;
+            }
+
+            set
+            {
+                typeScore = value;
             }
         }
 
@@ -36,6 +49,20 @@ namespace FindMe.ViewModels
 
         public LeaderboardViewModel()
         {
+            if (TypeScore == 0)
+            {
+
+            }
+
+            else if (TypeScore == 1)
+            {
+
+            }
+
+            else
+            {
+
+            }
             Settings.HighScoresSettings.Sort();
             ListItems = new ObservableCollection<Score>(Settings.HighScoresSettings);
         }
