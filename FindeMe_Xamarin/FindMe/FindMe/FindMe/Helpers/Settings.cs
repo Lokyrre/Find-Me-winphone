@@ -30,7 +30,7 @@ namespace FindMe.Helpers
         private static readonly bool IsHardDefault = false;
 
         private const string NbrIconIndexKey = "nbrIconIndex_Key";
-        private static readonly int NbrIconIndexDefault = 5;
+        private static readonly int NbrIconIndexDefault = 0;
 
         private const string NbrIconKey = "nbrIcon_Key";
         private static readonly int NbrIconDefault = 5;
@@ -45,10 +45,10 @@ namespace FindMe.Helpers
         private static readonly bool IsVibrationEnabledDefault = true;
 
         private const string ListImageKey = "listImageKey";
-        private static readonly Dictionary<string, List<string>> listImageDefault = new Dictionary<string, List<string>>();
+        private static readonly Dictionary<string, List<string>> ListImageDefault = new Dictionary<string, List<string>>();
 
         private const string TypeGameKey = "TypeGeme_Key";
-        private static readonly int TypeGameDefault = 0;
+        private static readonly string TypeGameDefault = "Doctor Who";
 
         #endregion
 
@@ -77,7 +77,7 @@ namespace FindMe.Helpers
             }
         }
 
-        public static int nbrIconIndexSettings
+        public static int NbrIconIndexSettings
         {
             get
             {
@@ -89,7 +89,7 @@ namespace FindMe.Helpers
             }
         }
 
-        public static int nbrIconSettings
+        public static int NbrIconSettings
         {
             get
             {
@@ -137,17 +137,28 @@ namespace FindMe.Helpers
             }
         }
 
-        public static int typeGameSettings
+        public static string TypeGameSettings
         {
             get
             {
-                return AppSettings.GetValueOrDefault<int>(TypeGameKey, TypeGameDefault);
+                return AppSettings.GetValueOrDefault<string>(TypeGameKey, TypeGameDefault);
             }
             set
             {
-                AppSettings.AddOrUpdateValue<int>(TypeGameKey, value);
+                AppSettings.AddOrUpdateValue<string>(TypeGameKey, value);
             }
         }
 
+        public static Dictionary<string, List<string>> ListImageSettings
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault<Dictionary<string, List<string>>>(ListImageKey, ListImageDefault);
+            }
+            set
+            {
+
+            }
+        }
     }
 }

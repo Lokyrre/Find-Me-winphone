@@ -43,7 +43,7 @@ namespace FindMe.Views
 
         private void AddScore()
          {
-             Score score = new Score(Settings.UsernameSettings, Score, Settings.IsHardSettings, Settings.nbrIconSettings, "Doctor Who");
+             Score score = new Score(Settings.UsernameSettings, Score, Settings.IsHardSettings, Settings.NbrIconSettings, "Doctor Who");
              Settings.HighScoresSettings.Sort();
              if(Settings.HighScoresSettings.Count< 10)
              {
@@ -68,7 +68,7 @@ namespace FindMe.Views
         private void OnRestartSelected(object sender, EventArgs e)
         {
             AddScore();
-            Navigation.PushAsync(new Game(""));
+            Navigation.PushAsync(new Game(Settings.TypeGameSettings));
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using FindMe.ViewModels;
 
 using Xamarin.Forms;
+using FindMe.Helpers;
 
 namespace FindMe.Views
 {
@@ -15,6 +16,11 @@ namespace FindMe.Views
         {
             Title = "Options";
             InitializeComponent();
+            if(Device.OS == TargetPlatform.Windows)
+            {
+                lVib.IsVisible = false;
+                sVib.IsVisible = false;
+            }
             BindingContext = new OptionsViewModel();
             nbIcones.SelectedIndexChanged += (s, e) =>
             {

@@ -17,7 +17,7 @@
       </Picker>
     <Label Text="Son:"/>
       <Switch IsToggled="{Binding Sound}" ></Switch>
-    <Label Text="Vibreur:"/>
-      <Switch IsToggled="{Binding Vibration}" ></Switch>
+    <Label x:Name="lVib" Text="Vibreur:"/>
+      <Switch x:Name="sVib" IsToggled="{Binding Vibration}" ></Switch>
   </StackLayout>
 </ContentPage>

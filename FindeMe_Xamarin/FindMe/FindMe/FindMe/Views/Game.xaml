@@ -2,8 +2,16 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FindMe.Views.Game">
- 
-  <AbsoluteLayout x:Name="aLayout">
-      
-  </AbsoluteLayout>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="9.75*" />
+      <RowDefinition Height="0.2*" />
+      <RowDefinition Height="0.05*" />
+    </Grid.RowDefinitions>
+    <AbsoluteLayout Grid.Row="0" x:Name="aLayout" AbsoluteLayout.LayoutBounds="0,0,1,1">
+
+    </AbsoluteLayout>
+    <Label Grid.Row="1" x:Name="labelScore" />
+    <ProgressBar Grid.Row="2" x:Name="progress" Progress="1" />
+  </Grid>
 </ContentPage>
