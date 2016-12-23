@@ -16,6 +16,11 @@ namespace FindMe.Views
         {
             Title = "Options";
             InitializeComponent();
+            if(Device.OS == TargetPlatform.Windows)
+            {
+                lVib.IsVisible = false;
+                sVib.IsVisible = false;
+            }
             BindingContext = new OptionsViewModel();
             nbIcones.SelectedIndexChanged += (s, e) =>
             {

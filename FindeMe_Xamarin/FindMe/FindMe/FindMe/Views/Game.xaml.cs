@@ -57,7 +57,7 @@ namespace FindMe.Views
                     img.Source = ImageSource.FromFile(gvm.Item(isWhiteIntruder, true));
                     tapGestureRecognizer.Tapped += (s, e) =>
                     {
-                        if (Settings.IsVibrationEnabledSettings)
+                        if (Settings.IsVibrationEnabledSettings && Device.OS != TargetPlatform.Windows)
                         {
                             CrossVibrate.Current.Vibration(300);
                         }
