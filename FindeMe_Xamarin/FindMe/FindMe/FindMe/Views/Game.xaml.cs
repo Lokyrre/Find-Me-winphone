@@ -18,6 +18,8 @@ namespace FindMe.Views
         private double addingTime;
         private double coefficientTime ;
         private int time;
+        private List<double> xPerCent;
+        private List<double> yPerCent;
 
         public Game(string gameType)
         {
@@ -37,6 +39,10 @@ namespace FindMe.Views
             GameViewModel gvm = new GameViewModel();
             bool isWhiteIntruder = Convert.ToBoolean(r.Next(2));
             int intruder = r.Next(Settings.NbrIconSettings);
+
+            xPerCent = new List<double>();
+            yPerCent = new List<double>();
+
             for (int i = 0; i < Settings.NbrIconSettings; i++)
             {
                 var img = new Image();
@@ -91,13 +97,48 @@ namespace FindMe.Views
                 }
                 img.GestureRecognizers.Add(tapGestureRecognizer);
                 aLayout.Children.Add(img);
-                AbsoluteLayout.SetLayoutBounds(img, new Rectangle(1.0 * r.Next(100) / 100, 1.0 * r.Next(100) / 100, .1, .1));
+
+                xPerCent.Add(1.0 * r.Next(100) / 100);
+                yPerCent.Add(1.0 * r.Next(100) / 100);
+
+                AbsoluteLayout.SetLayoutBounds(img, new Rectangle(xPerCent[xPerCent.Count -1], yPerCent[yPerCent.Count - 1], .1, .1));
                 AbsoluteLayout.SetLayoutFlags(img, AbsoluteLayoutFlags.All);
             }
 
+           // await progress.ProgressTo(0, (uint)time, Easing.Linear);
+
+            if (Settings.IsHardSettings)
+            {
+                foreach (Image img in aLayout.Children)
+                {
+                    double x;
+                    double y;
+                    if ((Convert.ToBoolean(r.Next(2))))
+                    {
+                        x = 3000;
+                    }
+                    else
+                    {
+                        x = -3000;
+                    }
+                    if ((Convert.ToBoolean(r.Next(2))))
+                    {
+                        y = 3000;
+                    }
+                    else
+                    {
+                        y = -3000;
+                    }
+
+                    img.TranslateTo(x, y, (uint)time, Easing.Linear);
+                }
+            }
+
             labelScore.Text = "Score: " + score;
+
             await progress.ProgressTo(0, (uint)time, Easing.Linear);
-            if(progress.Progress == 0)
+
+            if (progress.Progress == 0)
             {
                 await Navigation.PushAsync(new EndGame(score));
             }

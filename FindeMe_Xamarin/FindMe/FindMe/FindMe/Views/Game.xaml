@@ -4,11 +4,11 @@
              x:Class="FindMe.Views.Game">
   <Grid>
     <Grid.RowDefinitions>
-      <RowDefinition Height="9.9*" />
-      <RowDefinition Height="0.05*" />
+      <RowDefinition Height="9.75*" />
+      <RowDefinition Height="0.2*" />
       <RowDefinition Height="0.05*" />
     </Grid.RowDefinitions>
-    <AbsoluteLayout Grid.Row="0" x:Name="aLayout">
+    <AbsoluteLayout Grid.Row="0" x:Name="aLayout" AbsoluteLayout.LayoutBounds="0,0,1,1">
 
     </AbsoluteLayout>
     <Label Grid.Row="1" x:Name="labelScore" />
