@@ -30,7 +30,7 @@ namespace FindMe.Views
 
        private void OnNewGameDWSelected(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new Game("Doctor Who"));
+            Navigation.PushAsync(new Game("DoctorWho"));
         }
 
         private void OnNewGamePSelected(object sender, EventArgs e)

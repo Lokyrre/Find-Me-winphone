@@ -13,65 +13,76 @@ namespace FindMe.Views
 {
     public partial class Game : ContentPage
     {
-        public Game(string typeGame)
+        private int score;
+        public Game(string gameType)
         {
             InitializeComponent();
-            BindingContext = new GameViewModel();
+            Settings.TypeGameSettings = gameType;
+            GameViewModel.ClearListItem();
+            score = 0;
             Loading();
         }
 
-        void Loading()
+        async void Loading()
         {
             Random r = new Random();
-
-            int nbIcones;
-
-            switch (Settings.nbrIconSettings)
+            GameViewModel gvm = new GameViewModel();
+            bool isWhiteIntruder = Convert.ToBoolean(r.Next(2));
+            int intruder = r.Next(Settings.NbrIconSettings);
+            var progressBar = new ProgressBar
             {
-                case 1:
-                    nbIcones = 5;
-                    break;
-                case 2:
-                    nbIcones = 7;
-                    break;
-                default:
-                    nbIcones = 3;
-                    break;
-            }
-
-            for (int i = 0; i < nbIcones; i++)
+                Progress = .2,
+            };
+            for (int i = 0; i < Settings.NbrIconSettings; i++)
             {
                 var img = new Image();
-                //img.Source = ""; //TODO récupérer image aléatoire de la liste correspondante
-                img.BackgroundColor = Color.FromRgb(r.Next(255), r.Next(255), r.Next(255));
+
                 img.HeightRequest = 60;
                 img.WidthRequest = 60;
+
                 var tapGestureRecognizer = new TapGestureRecognizer();
-                tapGestureRecognizer.Tapped += (s, e) => {
-                    Image imgTemp = (Image)s;
-                    imgTemp.BackgroundColor = Color.Red;
-                    if (Settings.IsVibrationEnabledSettings)
+
+                if (i == intruder)
+                {
+                    img.Source = ImageSource.FromFile(gvm.Item(isWhiteIntruder, true));
+                    tapGestureRecognizer.Tapped += (s, e) =>
                     {
-                        CrossVibrate.Current.Vibration(500);
-                    }
-                    if (Settings.IsSongEnabledSettings)
+                        if (Settings.IsVibrationEnabledSettings)
+                        {
+                            CrossVibrate.Current.Vibration(300);
+                        }
+                        score += 150;
+                        aLayout.Children.Clear();
+                        Loading();
+                    };
+                }
+                else
+                {
+                    img.Source = ImageSource.FromFile(gvm.Item(isWhiteIntruder, false));
+
+                    tapGestureRecognizer.Tapped += (s, e) =>
                     {
-                       
-                    }
-                    aLayout.Children.Clear();
-                    Loading();
-                };
+                        if (Settings.IsSongEnabledSettings)
+                        {
+
+                        }
+                        score -= 33;
+                        aLayout.Children.Clear();
+                        Loading();
+                    };
+                }
                 img.GestureRecognizers.Add(tapGestureRecognizer);
                 aLayout.Children.Add(img);
-
+                await progressBar.ProgressTo(.8, 250, Easing.Linear);
                 AbsoluteLayout.SetLayoutBounds(img, new Rectangle(1.0 * r.Next(100) / 100, 1.0 * r.Next(100) / 100, .1, .1));
                 AbsoluteLayout.SetLayoutFlags(img, AbsoluteLayoutFlags.All);
 
-                
+
             }
-            
+
 
         }
 
     }
 }
+//GameViewModel.ClearListItem(); Navigation.PushAsync(new EndGame(score));

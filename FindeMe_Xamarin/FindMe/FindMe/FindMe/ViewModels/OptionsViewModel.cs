@@ -68,7 +68,7 @@ namespace FindMe.ViewModels
             set
             {
                 nbIconesIndex = value;
-                Settings.nbrIconIndexSettings = nbIconesIndex;
+                Settings.NbrIconIndexSettings = nbIconesIndex;
                 OnPropertyChanged("NbIconesIndex");
             }
         }
@@ -98,7 +98,7 @@ namespace FindMe.ViewModels
             set
             {
                 nbIcones = value;
-                Settings.nbrIconSettings = nbIconesIndex;
+                Settings.NbrIconSettings = nbIcones;
                 OnPropertyChanged("NbIcones");
             }
         }
@@ -115,8 +115,8 @@ namespace FindMe.ViewModels
             HardGame = Settings.IsHardSettings;
             Sound = Settings.IsSongEnabledSettings;
             Vibration = Settings.IsVibrationEnabledSettings;
-            NbIconesIndex = Settings.nbrIconIndexSettings;
-            NbIcones = Settings.nbrIconSettings;
+            NbIconesIndex = Settings.NbrIconIndexSettings;
+            NbIcones = Settings.NbrIconSettings;
             Username = Settings.UsernameSettings;
         }
     }
