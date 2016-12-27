@@ -3,9 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FindMe.Views.Home"
              xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions">
+
   <ContentPage>
     <StackLayout>
-      <Label Text="FindMe !" VerticalOptions="Center" />
+      <Image Source="logo_find_me.png" HorizontalOptions="Center"/>
       <Label Text="Doctor Who" VerticalOptions="Center" />
       <Button x:Name="bNewGameDW" Text="Jouer" />
       <Button x:Name="bLeaderboardDW" Text="Leaderboard" />
@@ -14,7 +15,7 @@
   </ContentPage>
   <ContentPage>
     <StackLayout>
-      <Label Text="FindMe !" VerticalOptions="Center" />
+      <Image Source="logo_find_me.png" HorizontalOptions="Center"/>
       <Label Text="Pokemon" VerticalOptions="Center" />
       <Button x:Name="bNewGameP" Text="Jouer" />
       <Button x:Name="bLeaderboardP" Text="Leaderboard" />
@@ -23,7 +24,7 @@
   </ContentPage>
   <ContentPage>
     <StackLayout>
-      <Label Text="FindMe !" VerticalOptions="Center" />
+      <Image Source="logo_find_me.png" HorizontalOptions="Center"/>
       <Label Text="MLP" VerticalOptions="Center" />
       <Button x:Name="bNewGameMLP" Text="Jouer" />
       <Button x:Name="bLeaderboardMLP" Text="Leaderboard" />

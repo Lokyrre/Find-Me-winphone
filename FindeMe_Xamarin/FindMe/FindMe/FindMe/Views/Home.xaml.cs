@@ -15,6 +15,7 @@ namespace FindMe.Views
         {
             InitializeComponent();
             BindingContext = new HomeViewModel();
+
             bLeaderboardDW.Clicked += OnLeaderboardSelected;
             bOptionsDW.Clicked += OnOptionsSelected;
             bNewGameDW.Clicked += OnNewGameDWSelected;
