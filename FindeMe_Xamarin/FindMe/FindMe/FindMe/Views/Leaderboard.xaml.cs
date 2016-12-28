@@ -24,6 +24,5 @@ namespace FindMe.Views
                 l.TypeScore = typeScore.SelectedIndex;
             };
         }
-
     }
 }

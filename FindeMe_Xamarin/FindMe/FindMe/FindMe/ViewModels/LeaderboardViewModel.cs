@@ -49,22 +49,25 @@ namespace FindMe.ViewModels
 
         public LeaderboardViewModel()
         {
-            if (TypeScore == 0)
-            {
-
-            }
-
-            else if (TypeScore == 1)
-            {
-
-            }
-
-            else
-            {
-
-            }
+            List<Score> listGameMode = new List<Score>();
             Settings.HighScoresSettings.Sort();
-            ListItems = new ObservableCollection<Score>(Settings.HighScoresSettings);
+            for(int i=0; i< Settings.HighScoresSettings.Count; i++)
+            {
+                if (TypeScore == 0 && Settings.HighScoresSettings[i].GameMode == "Doctor Who")
+                {
+                    listGameMode.Add(Settings.HighScoresSettings[i]);
+                }
+
+                else if (TypeScore == 1 && Settings.HighScoresSettings[i].GameMode == "My Little Poney")
+                {
+                    listGameMode.Add(Settings.HighScoresSettings[i]);
+                }
+
+                else
+                {
+                }
+                ListItems = new ObservableCollection<Score>(listGameMode);
+            }
         }
     }
 }
