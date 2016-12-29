@@ -115,6 +115,7 @@
     <Content Include="bmlp5.png" />
     <Content Include="bmlp6.png" />
     <Content Include="bmlp7.png" />
+    <Content Include="doctorwho_logo.png" />
     <Content Include="dw1.png" />
     <Content Include="dw2.png" />
     <Content Include="dw3.png" />
@@ -136,6 +137,7 @@
     <Content Include="epkm5.png" />
     <Content Include="epkm6.png" />
     <Content Include="epkm7.png" />
+    <Content Include="logo_find_me.png" />
     <Content Include="mlp.png" />
     <Content Include="mlp1.png" />
     <Content Include="mlp2.png" />
@@ -144,6 +146,7 @@
     <Content Include="mlp5.png" />
     <Content Include="mlp6.png" />
     <Content Include="mlp7.png" />
+    <Content Include="mlp_logo.png" />
     <Content Include="pkm.png" />
     <Content Include="pkm1.png" />
     <Content Include="pkm2.png" />
@@ -152,6 +155,7 @@
     <Content Include="pkm5.png" />
     <Content Include="pkm6.png" />
     <Content Include="pkm7.png" />
+    <Content Include="pkm_logo.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

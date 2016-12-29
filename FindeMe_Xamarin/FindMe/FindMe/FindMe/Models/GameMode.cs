@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FindMe.Models
 {
-    class GameType
+    class GameMode
     {
         public string ImageUrl { get; set; }
         public string Name { get; set; }

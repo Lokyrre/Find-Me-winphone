@@ -38,7 +38,7 @@
     <Compile Include="App.cs" />
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="Models\Facts.cs" />
-    <Compile Include="Models\GameType.cs" />
+    <Compile Include="Models\GameMode.cs" />
     <Compile Include="Models\Score.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\EndGameViewModel.cs" />
@@ -48,18 +48,23 @@
     <Compile Include="ViewModels\OptionsViewModel.cs" />
     <Compile Include="Views\EndGame.xaml.cs">
       <DependentUpon>EndGame.xaml</DependentUpon>
+      <Generator>MSBuild:Compile</Generator>
     </Compile>
     <Compile Include="Views\Game.xaml.cs">
       <DependentUpon>Game.xaml</DependentUpon>
+      <Generator>MSBuild:Compile</Generator>
     </Compile>
     <Compile Include="Views\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
+      <Generator>MSBuild:Compile</Generator>
     </Compile>
     <Compile Include="Views\Leaderboard.xaml.cs">
       <DependentUpon>Leaderboard.xaml</DependentUpon>
+      <Generator>MSBuild:Compile</Generator>
     </Compile>
     <Compile Include="Views\Options.xaml.cs">
       <DependentUpon>Options.xaml</DependentUpon>
+      <Generator>MSBuild:Compile</Generator>
     </Compile>
     <Compile Include="Models\GameCore.cs" />
     <Compile Include="Models\Icon.cs" />

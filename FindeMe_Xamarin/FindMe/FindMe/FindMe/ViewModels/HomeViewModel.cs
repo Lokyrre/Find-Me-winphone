@@ -10,27 +10,27 @@ namespace FindMe.ViewModels
 {
     class HomeViewModel
     {
-        public ObservableCollection<GameType> GameTypes { get; set; }
+        public ObservableCollection<GameMode> GameModes { get; set; }
 
         public HomeViewModel()
         {
-            GameTypes = new ObservableCollection<GameType>
+            GameModes = new ObservableCollection<GameMode>
             {
-                new GameType
+                new GameMode
                 {
-                    ImageUrl = "",
+                    ImageUrl = "doctorwho_logo.png",
                     Name = "Doctor Who"
                 },
 
-                new GameType
+                new GameMode
                 {
-                    ImageUrl = "",
-                    Name = "My Little Poney"
+                    ImageUrl = "mlp_logo.png",
+                    Name = "My Little Pony"
                 },
 
-                new GameType
+                new GameMode
                 {
-                    ImageUrl = "",
+                    ImageUrl = "pkm_logo.png",
                     Name = "Pokemon"
                 }
             };
