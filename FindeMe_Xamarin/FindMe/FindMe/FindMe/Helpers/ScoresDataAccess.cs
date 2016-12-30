@@ -4,7 +4,6 @@ using System.Linq;
 using FindMe.Helpers;
 using System.Text;
 using System.Threading.Tasks;
-using SQLite.Net.Async;
 using Xamarin.Forms;
 using System.Collections.ObjectModel;
 using FindMe.Models;

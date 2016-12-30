@@ -8,27 +8,23 @@
         <ColumnDefinition Width="Auto" />
         <ColumnDefinition Width="*" />
       </Grid.ColumnDefinitions>
-      <Label Grid.Column="0" Text="Nom d'utilisateur:"/>
+      <Label Grid.Column="0" Text="Nom d'utilisateur :"/>
       <Entry Grid.Column="1" Text="{Binding Username}" />
-    </Grid>
-    <Grid HorizontalOptions="Center" RowSpacing="1" ColumnSpacing="1">
-      <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="Auto" />
-        <ColumnDefinition Width="*" />
-      </Grid.ColumnDefinitions>
-      <Grid.RowDefinitions>
-        <RowDefinition Height="*" />
-        <RowDefinition Height="*" />
-      </Grid.RowDefinitions>
-      <Label Grid.Column="0" Grid.Row="0" Text="Mode Difficile:" HorizontalOptions="Center"/>
-      <Switch Grid.Column="1" Grid.Row="1" IsToggled="{Binding HardGame}" ></Switch>
     </Grid>
     <Grid HorizontalOptions="Center">
       <Grid.ColumnDefinitions>
         <ColumnDefinition Width="Auto" />
         <ColumnDefinition Width="*" />
       </Grid.ColumnDefinitions>
-      <Label Grid.Column="0" Text="Nombre d'icone:" HorizontalOptions="Center"/>
+      <Label Grid.Column="0" Text="Mode Difficile :" HorizontalOptions="Center"/>
+      <Switch Grid.Column="1" IsToggled="{Binding HardGame}" ></Switch>
+    </Grid>
+    <Grid HorizontalOptions="Center">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      <Label Grid.Column="0" Text="Nombre d'icone :" HorizontalOptions="Center"/>
       <Picker Grid.Column="1" SelectedIndex="{Binding NbIconesIndex}" HorizontalOptions="FillAndExpand" x:Name="nbIcones">
         <Picker.Items>
           <x:String>3</x:String>
@@ -42,7 +38,7 @@
         <ColumnDefinition Width="Auto" />
         <ColumnDefinition Width="*" />
       </Grid.ColumnDefinitions>
-      <Label Grid.Column="0" x:Name="lVib" Text="Vibreur:" HorizontalOptions="Center"/>
+      <Label Grid.Column="0" x:Name="lVib" Text="Vibreur :" HorizontalOptions="Center"/>
       <Switch Grid.Column="1" x:Name="sVib" IsToggled="{Binding Vibration}" ></Switch>
     </Grid>
     <Grid HorizontalOptions="Center">
@@ -50,7 +46,7 @@
         <ColumnDefinition Width="Auto" />
         <ColumnDefinition Width="*" />
       </Grid.ColumnDefinitions>
-      <Label Grid.Column="0" Text="Son:" HorizontalOptions="Center"/>
+      <Label Grid.Column="0" Text="Son :" HorizontalOptions="Center"/>
       <Switch Grid.Column="1" IsToggled="{Binding Sound}" ></Switch>
     </Grid>
    
