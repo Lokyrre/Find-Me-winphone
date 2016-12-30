@@ -51,6 +51,7 @@ namespace FindMe.Views
 
             BindingContext = new OptionsViewModel(); // Recuperation du Username afin de l'afficher dans la page de fin de partie
 
+            AddScore();
             bRestart.Clicked += OnRestartSelected;
             bMenu.Clicked += OnMenuSelected;
         }
@@ -63,13 +64,11 @@ namespace FindMe.Views
 
         private void OnMenuSelected(object sender, EventArgs e)
         {
-            AddScore();
             Navigation.PushAsync(new Home());
         }
 
         private void OnRestartSelected(object sender, EventArgs e)
         {
-            AddScore();
             Navigation.PushAsync(new Game(Settings.TypeGameSettings));
         }
     }
