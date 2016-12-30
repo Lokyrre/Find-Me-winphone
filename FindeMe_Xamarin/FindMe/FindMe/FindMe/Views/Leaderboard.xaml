@@ -11,6 +11,8 @@
         <x:String>Pokemon</x:String>
       </Picker.Items>
     </Picker>
+    <Label Text="Mode Difficile :" HorizontalOptions="Center"/>
+    <Switch x:Name="switchHard"></Switch>
     <ListView x:Name="list" Header="Meilleurs Scores" ItemsSource="{Binding ListItems}">
       <ListView.ItemTemplate>
         <DataTemplate>

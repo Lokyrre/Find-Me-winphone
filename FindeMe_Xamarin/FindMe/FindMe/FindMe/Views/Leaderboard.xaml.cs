@@ -20,9 +20,20 @@ namespace FindMe.Views
             BindingContext = new LeaderboardViewModel();
             typeScore.SelectedIndexChanged += (s, e) =>
             {
-                string value = typeScore.Items[typeScore.SelectedIndex];
-                BindingContext = new LeaderboardViewModel(value);
+                reloadLeaderboard();
             };
+
+            switchHard.Toggled += (s, e) =>
+            {
+                reloadLeaderboard();
+            };
+        }
+
+        private void reloadLeaderboard()
+        {
+            string value = typeScore.Items[typeScore.SelectedIndex];
+            bool isHard = switchHard.IsToggled;
+            BindingContext = new LeaderboardViewModel(value, isHard);
         }
     }
 }

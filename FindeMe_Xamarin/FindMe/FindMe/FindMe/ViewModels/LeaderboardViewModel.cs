@@ -34,14 +34,14 @@ namespace FindMe.ViewModels
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
                 
-        public LeaderboardViewModel(String typeGame = "Doctor Who")
+        public LeaderboardViewModel(String typeGame = "Doctor Who", Boolean isHard = false)
         {
             ScoresDataAccess sda = new ScoresDataAccess();
             Score s;
             List<DataScore> listTemp = new List<DataScore>();
             List<Score> listScore = new List<Score>();
 
-            listTemp = sda.GetScoreGameMode(typeGame);
+            listTemp = sda.GetScoreGameMode(typeGame, isHard);
 
             for (int i = 0; i < listTemp.Count; i++)
             {

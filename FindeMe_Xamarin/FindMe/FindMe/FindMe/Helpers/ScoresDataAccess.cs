@@ -49,12 +49,12 @@ namespace FindMe.Helpers
             }
         }
 
-        public List<DataScore> GetScoreGameMode(string gameMode)
+        public List<DataScore> GetScoreGameMode(string gameMode, Boolean isHard)
         {
             try
             {
                 var dB = DependencyService.Get<IDatabaseConnection>().GetConnection();
-                var score = dB.Query<DataScore>("select * from DataScore where GameMode = ?", gameMode);
+                var score = dB.Query<DataScore>("select * from DataScore where GameMode = ? and IsHard = ?", gameMode, isHard);
 
                 return score;
             }
