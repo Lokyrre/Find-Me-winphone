@@ -2,15 +2,41 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FindMe.Views.EndGame">
-  <StackLayout>
-    <Label Text="&#13;&#10;&#13;&#10;Partie Terminer&#13;&#10;"/>
-    <Label Text="{Binding Username}" />
-    <Label x:Name="newHighScore" />
-    <Label Text="&#13;&#10;Score !&#13;&#10;"/>
-    <Label x:Name="scoreGame"/>
-    <Label Text="Le saviez-vous ?"/>
-    <Label x:Name="fact"/>
-    <Button x:Name="bRestart" Text="Rejouer" />
-    <Button x:Name="bMenu" Text="Menu" />
-  </StackLayout>
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Style x:Key="Replay" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="#617BC4"/>
+        <Setter Property="FontSize" Value="20" />
+      </Style>
+      <Style x:Key="Menu" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="#353535"/>
+        <Setter Property="FontSize" Value="20" />
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <ContentPage.Content>
+    <StackLayout>
+      <Label Text="&#13;&#10;&#13;&#10;Partie Terminer&#13;&#10;" HorizontalTextAlignment="Center"/>
+      <Label Text="{Binding Username}" HorizontalTextAlignment="Center"/>
+      <Label x:Name="newHighScore" HorizontalTextAlignment="Center"/>
+      <Label x:Name="scoreGame" Text="Score : " HorizontalTextAlignment="Center"/>
+      <Label Text="Le saviez-vous ?" HorizontalTextAlignment="Center"/>
+      <Label x:Name="fact" HorizontalTextAlignment="Center"/>
+      <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+          <RowDefinition Height=".5*"/>
+          <RowDefinition Height=".5*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <StackLayout Grid.Row="2"  Grid.Column="1">
+          <Button x:Name="bRestart" Text="Rejouer" Style="{StaticResource Replay}" />
+          <Button x:Name="bMenu" Text="Menu" Style="{StaticResource Menu}" />
+        </StackLayout>
+      </Grid>
+    </StackLayout>
+  </ContentPage.Content>
 </ContentPage>

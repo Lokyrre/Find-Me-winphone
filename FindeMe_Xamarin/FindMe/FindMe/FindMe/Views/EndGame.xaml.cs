@@ -47,7 +47,7 @@ namespace FindMe.Views
                 newHighScore.Text = "\n Vous pouvez mieux faire... :'(";
             }
 
-            scoreGame.Text = score.ToString()+"\n";
+            scoreGame.Text = "\n" + scoreGame.Text + score.ToString() + "\n";
 
             BindingContext = new OptionsViewModel(); // Recuperation du Username afin de l'afficher dans la page de fin de partie
 
