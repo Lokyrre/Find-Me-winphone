@@ -18,6 +18,8 @@ namespace FindMe.Views
         public EndGame(int score)
         {
             InitializeComponent();
+            
+            NavigationPage.SetHasBackButton(this, false); // Desactive le bouton retour
 
             Score = score;
 
@@ -28,7 +30,7 @@ namespace FindMe.Views
             List<DataScore> listDataScores = sda.GetScoreGameMode(Settings.TypeGameSettings, Settings.IsHardSettings, Settings.NbrIconSettings);
             List<Score> listScores = new List<Score>();
 
-            //Conversion de DataScore en Score
+            //Conversion de List<DataScore> en List<Score>
             for(int j = 0; j < listDataScores.Count; j++)
             {
                 s = new Score(listDataScores[j]);
@@ -38,6 +40,7 @@ namespace FindMe.Views
             //Tri du tableau de Scores
             listScores.Sort();
 
+            //Condition d'apparaition du message de depassement du meilleur score
             if(listScores.Count > 0 && score > listScores[0].ValueScore)
             {
                 newHighScore.Text = "\n Bravo ! Vous avez établi le meilleur score !";
@@ -52,7 +55,6 @@ namespace FindMe.Views
             BindingContext = new OptionsViewModel(); // Recuperation du Username afin de l'afficher dans la page de fin de partie
 
             AddScore();
-            NavigationPage.SetHasBackButton(this, false);
             bRestart.Clicked += OnRestartSelected;
             bMenu.Clicked += OnMenuSelected;
         }
@@ -63,12 +65,12 @@ namespace FindMe.Views
             sda.InsertUpdateData(score);
         }
 
-        private void OnMenuSelected(object sender, EventArgs e)
+        private void OnMenuSelected(object sender, EventArgs e) //Bouton de retour au menu
         {
             Navigation.PushAsync(new Home());
         }
 
-        private void OnRestartSelected(object sender, EventArgs e)
+        private void OnRestartSelected(object sender, EventArgs e) //Bouton permettant de rejouer une partie
         {
             Navigation.PushAsync(new Game(Settings.TypeGameSettings));
         }

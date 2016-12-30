@@ -12,7 +12,6 @@ namespace FindMe.ViewModels
 {
     class LeaderboardViewModel : INotifyPropertyChanged
     {
-        private int typeScore;
         private static ObservableCollection<Score> listItems = new ObservableCollection<Score>();
         public ObservableCollection<Score> ListItems
         {
@@ -43,11 +42,14 @@ namespace FindMe.ViewModels
 
             listTemp = sda.GetScoreGameMode(typeGame, isHard, nbrIcons);
 
+            //Convertion de List<DataScore> en List<Score>
             for (int i = 0; i < listTemp.Count; i++)
             {
                 s = new Score(listTemp[i]);
                 listScore.Add(s);
             }
+
+            //Tri de la liste
             listScore.Sort();
             ListItems = new ObservableCollection<Score>(listScore);
         }

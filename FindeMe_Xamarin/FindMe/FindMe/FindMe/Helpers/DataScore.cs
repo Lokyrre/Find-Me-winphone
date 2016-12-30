@@ -12,6 +12,7 @@ namespace FindMe.Helpers
 {
     public class DataScore
     {
+        //Constructeur
         public DataScore()
         {
             Username = "Guest";
@@ -20,6 +21,8 @@ namespace FindMe.Helpers
             NbrIcons = 3;
             GameMode = "Doctor Who";
         }
+
+        //COnstructeur permettant de convertir un Score en DataScore
         public DataScore(Score s)
         {
             Username = s.Username;
@@ -28,6 +31,8 @@ namespace FindMe.Helpers
             NbrIcons = s.NbrIcons;
             GameMode = s.GameMode;
         }
+
+        //Contenu de la table DataScore de la base SQLite
 
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
