@@ -47,5 +47,7 @@ namespace FindMe.Helpers
         [NotNull]
         public String GameMode { get; set; }
 
+        public String Localisation { get; set; }
+
     }
 }
