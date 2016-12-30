@@ -4,11 +4,19 @@
              x:Class="FindMe.Views.Leaderboard">
   
   <StackLayout>
-    <Picker SelectedIndex="1" HorizontalOptions="FillAndExpand" x:Name="typeScore">
+    <Picker HorizontalOptions="FillAndExpand" x:Name="typeScore">
       <Picker.Items>
         <x:String>Doctor Who</x:String>
         <x:String>My Little Pony</x:String>
         <x:String>Pokemon</x:String>
+      </Picker.Items>
+    </Picker>
+    <Label Text="Nombre d'icones :" HorizontalOptions="Center"/>
+    <Picker HorizontalOptions="FillAndExpand" x:Name="nbrIcon">
+      <Picker.Items>
+        <x:String>3</x:String>
+        <x:String>5</x:String>
+        <x:String>7</x:String>
       </Picker.Items>
     </Picker>
     <Label Text="Mode Difficile :" HorizontalOptions="Center"/>

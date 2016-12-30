@@ -17,8 +17,14 @@ namespace FindMe.Views
             Title = "Leaderboard";
             InitializeComponent();
             typeScore.SelectedIndex = 0;
+            nbrIcon.SelectedIndex = 0;
             BindingContext = new LeaderboardViewModel();
             typeScore.SelectedIndexChanged += (s, e) =>
+            {
+                reloadLeaderboard();
+            };
+
+            nbrIcon.SelectedIndexChanged += (s, e) =>
             {
                 reloadLeaderboard();
             };
@@ -33,7 +39,8 @@ namespace FindMe.Views
         {
             string value = typeScore.Items[typeScore.SelectedIndex];
             bool isHard = switchHard.IsToggled;
-            BindingContext = new LeaderboardViewModel(value, isHard);
+            int nbrIcons = Int32.Parse(nbrIcon.Items[nbrIcon.SelectedIndex]);
+            BindingContext = new LeaderboardViewModel(value, isHard, nbrIcons);
         }
     }
 }
