@@ -13,16 +13,28 @@ using FindMe.Helpers;
 using FindMe.Droid;
 using System.IO;
 using SQLite.Net;
+using SQLite.Net.Platform.XamarinAndroid;
 
-[assembly: Xamarin.Forms.Dependency(typeof(DatabaseConnection_Android))]
+[assembly: Xamarin.Forms.Dependency(typeof(DataBaseConnection_Android))]
 
 namespace FindMe.Droid
 {
-    class DatabaseConnection_Android : IDatabaseConnection
+    public class DataBaseConnection_Android : IDatabaseConnection
     {
         public SQLiteConnection GetConnection()
         {
-            throw new NotImplementedException();
+            var dBPath = GetDatabasePath();
+            return new SQLiteConnection(new SQLitePlatformAndroid(), dBPath);
+        }
+
+        public static string GetDatabasePath()
+        {
+            const string sqliteFilename = "Scores.db3";
+
+            string documentsPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal); // Documents folder
+            var path = Path.Combine(documentsPath, sqliteFilename);
+
+            return path;
         }
     }
 }

@@ -27,50 +27,25 @@ namespace FindMe.ViewModels
             }
         }
 
-        public int TypeScore
-        {
-            get
-            {
-                return typeScore;
-            }
-
-            set
-            {
-                typeScore = value;
-            }
-        }
-
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void OnPropertyChanged(string propertyName)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
-        public LeaderboardViewModel()
+                
+        public LeaderboardViewModel(String typeGame = "Doctor Who", Boolean isHard = false, int nbrIcons = 3)
         {
-            ScoresDataAccess sda = new ScoresDataAccess();            
+            ScoresDataAccess sda = new ScoresDataAccess();
+            Score s;
             List<DataScore> listTemp = new List<DataScore>();
             List<Score> listScore = new List<Score>();
 
-            if (TypeScore == 0)
-            {
-                listTemp = sda.GetScoreGameMode("Doctor Who");
-            }
+            listTemp = sda.GetScoreGameMode(typeGame, isHard, nbrIcons);
 
-            else if(TypeScore == 1)
+            for (int i = 0; i < listTemp.Count; i++)
             {
-                listTemp = sda.GetScoreGameMode("My Little Pony");
-            }
-
-            else
-            {
-                listTemp = sda.GetScoreGameMode("Pokemon");
-            }
-
-            for(int i=0; i<listTemp.Count; i++)
-            {
-                Score s = new Score(listTemp[i]);
+                s = new Score(listTemp[i]);
                 listScore.Add(s);
             }
             listScore.Sort();
