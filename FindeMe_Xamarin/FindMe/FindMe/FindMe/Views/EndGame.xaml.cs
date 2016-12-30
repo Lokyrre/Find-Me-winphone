@@ -24,14 +24,27 @@ namespace FindMe.Views
             Random rnd = new Random();
             int i = rnd.Next(Facts.UKnow.Count);
             fact.Text = "\n"+Facts.UKnow[i]+"\n";
+            Score s;
+            List<DataScore> listDataScores = sda.GetScoreGameMode(Settings.TypeGameSettings, Settings.IsHardSettings, Settings.NbrIconSettings);
+            List<Score> listScores = new List<Score>();
 
-            if ((Settings.HighScoresSettings.Count > 0 && score > Settings.HighScoresSettings[0].ValueScore) || Settings.HighScoresSettings.Count == 0)
+            //Conversion de DataScore en Score
+            for(int j = 0; j < listDataScores.Count; j++)
+            {
+                s = new Score(listDataScores[j]);
+                listScores.Add(s);
+            }
+
+            //Tri du tableau de Scores
+            listScores.Sort();
+
+            if(listScores.Count > 0 && score > listScores[0].ValueScore)
             {
                 newHighScore.Text = "\n Bravo ! Vous avez établi le meilleur score !";
             }
             else
             {
-                newHighScore.Text = "\n Peut mieux faire... :'(";
+                newHighScore.Text = "\n Vous pouvez mieux faire... :'(";
             }
 
             scoreGame.Text = score.ToString()+"\n";
