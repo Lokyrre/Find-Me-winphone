@@ -250,3 +250,7 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+FindeMe_Xamarin/FindMe/FindMe/FindMe.WinPhone/Bootstrap/FilePluginBootstrap.cs
+FindeMe_Xamarin/FindMe/FindMe/FindMe.Windows/Bootstrap/FilePluginBootstrap.cs
+FindeMe_Xamarin/FindMe/FindMe/FindMe.iOS/Bootstrap/FilePluginBootstrap.cs
+FindeMe_Xamarin/FindMe/FindMe/FindMe.iOS/Bootstrap/SimpleAudioPlayerPluginBootstrap.cs

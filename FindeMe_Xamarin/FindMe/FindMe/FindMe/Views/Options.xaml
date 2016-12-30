@@ -8,7 +8,7 @@
         <ColumnDefinition Width="Auto" />
         <ColumnDefinition Width="*" />
       </Grid.ColumnDefinitions>
-      <Label Grid.Column="0" Text="Nom d'utilisateur :"/>
+      <Label Grid.Column="0" Text="Nom d'utilisateur :" VerticalTextAlignment="Center"/>
       <Entry Grid.Column="1" Text="{Binding Username}" />
     </Grid>
     <Grid HorizontalOptions="Center">
@@ -16,7 +16,7 @@
         <ColumnDefinition Width="Auto" />
         <ColumnDefinition Width="*" />
       </Grid.ColumnDefinitions>
-      <Label Grid.Column="0" Text="Mode Difficile :" HorizontalOptions="Center"/>
+      <Label Grid.Column="0" Text="Mode Difficile :" HorizontalOptions="Center" VerticalTextAlignment="Center"/>
       <Switch Grid.Column="1" IsToggled="{Binding HardGame}" ></Switch>
     </Grid>
     <Grid HorizontalOptions="Center">
@@ -24,7 +24,7 @@
         <ColumnDefinition Width="Auto" />
         <ColumnDefinition Width="*" />
       </Grid.ColumnDefinitions>
-      <Label Grid.Column="0" Text="Nombre d'icone :" HorizontalOptions="Center"/>
+      <Label Grid.Column="0" Text="Nombre d'icone :" HorizontalOptions="Center" VerticalTextAlignment="Center"/>
       <Picker Grid.Column="1" SelectedIndex="{Binding NbIconesIndex}" HorizontalOptions="FillAndExpand" x:Name="nbIcones">
         <Picker.Items>
           <x:String>3</x:String>
@@ -38,7 +38,7 @@
         <ColumnDefinition Width="Auto" />
         <ColumnDefinition Width="*" />
       </Grid.ColumnDefinitions>
-      <Label Grid.Column="0" x:Name="lVib" Text="Vibreur :" HorizontalOptions="Center"/>
+      <Label Grid.Column="0" x:Name="lVib" Text="Vibreur :" HorizontalOptions="Center" VerticalTextAlignment="Center"/>
       <Switch Grid.Column="1" x:Name="sVib" IsToggled="{Binding Vibration}" ></Switch>
     </Grid>
     <Grid HorizontalOptions="Center">
@@ -46,8 +46,8 @@
         <ColumnDefinition Width="Auto" />
         <ColumnDefinition Width="*" />
       </Grid.ColumnDefinitions>
-      <Label Grid.Column="0" Text="Son :" HorizontalOptions="Center"/>
-      <Switch Grid.Column="1" IsToggled="{Binding Sound}" ></Switch>
+      <Label Grid.Column="0" Text="Son :" HorizontalOptions="Center" VerticalTextAlignment="Center"/>
+      <Switch Grid.Column="1" IsToggled="{Binding Sound}"></Switch>
     </Grid>
    
   </StackLayout>

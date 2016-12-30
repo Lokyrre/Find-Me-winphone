@@ -9,7 +9,6 @@ using SQLite;
 using Xamarin.Forms;
 using Windows.Storage;
 using System.IO;
-using SQLite.Net.Async;
 using SQLite.Net;
 using SQLite.Net.Platform.WinRT;
 
