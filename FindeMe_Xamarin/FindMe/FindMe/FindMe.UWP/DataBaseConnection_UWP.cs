@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FindMe.Helpers;
-using FindMe.Windows;
+using FindMe.UWP;
 using SQLite;
 using Xamarin.Forms;
 using Windows.Storage;
@@ -13,11 +13,11 @@ using SQLite.Net.Async;
 using SQLite.Net;
 using SQLite.Net.Platform.WinRT;
 
-[assembly: Dependency(typeof(DataBaseConnection_Windows))]
+[assembly: Dependency(typeof(DataBaseConnection_UWP))]
 
-namespace FindMe.Windows
+namespace FindMe.UWP
 {
-    public class DataBaseConnection_Windows : IDatabaseConnection
+    public class DataBaseConnection_UWP : IDatabaseConnection
     {
         public SQLiteConnection GetConnection()
         {
@@ -25,7 +25,7 @@ namespace FindMe.Windows
             return new SQLiteConnection(new SQLitePlatformWinRT(), dBPath);
         }
 
-        private static string GetDatabasePath(string sqliteFilename)
+        public static string GetDatabasePath(string sqliteFilename)
         {
             string documentsPath = ApplicationData.Current.LocalFolder.Path;
             var path = Path.Combine(documentsPath, sqliteFilename);

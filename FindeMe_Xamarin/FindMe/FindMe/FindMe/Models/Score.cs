@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FindMe.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,15 @@ namespace FindMe.Models
              this.NbrIcons = 3;
              this.GameMode = "Doctor Who";
          }
+
+        public Score(DataScore ds)
+        {
+            Username = ds.Username;
+            ValueScore = ds.ValueScore;
+            IsHard = ds.IsHard;
+            NbrIcons = ds.NbrIcons;
+            GameMode = ds.GameMode;
+        }
  
          public Score(String username, double valueScore, bool isHard, int nbrIcons, String gameMode)
          {

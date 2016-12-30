@@ -1857,6 +1857,8 @@ namespace FindMe.Droid
 			global::CarouselView.FormsPlugin.Android.Resource.Styleable.ViewStubCompat_android_layout = global::FindMe.Droid.Resource.Styleable.ViewStubCompat_android_layout;
 			global::Plugin.Vibrate.Resource.String.ApplicationName = global::FindMe.Droid.Resource.String.ApplicationName;
 			global::Plugin.Vibrate.Resource.String.Hello = global::FindMe.Droid.Resource.String.Hello;
+			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.ApplicationName = global::FindMe.Droid.Resource.String.ApplicationName;
+			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.Hello = global::FindMe.Droid.Resource.String.Hello;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::FindMe.Droid.Resource.Attribute.actionBarSize;
 		}
 		

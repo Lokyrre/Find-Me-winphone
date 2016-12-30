@@ -2,6 +2,9 @@
   "dependencies": {
     "CarouselView.FormsPlugin": "2.7.1",
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0",
+    "SQLite.Net-PCL": "3.1.1",
+    "SQLite.Net.Async-PCL": "3.1.1",
+    "SQLite.Net.Core-PCL": "3.1.1",
     "Xam.Plugin.Geolocator": "3.0.4",
     "Xam.Plugins.Settings": "2.5.1",
     "Xam.Plugins.Vibrate": "2.0.0",

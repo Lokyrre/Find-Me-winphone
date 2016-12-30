@@ -36,6 +36,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="Helpers\DataScore.cs" />
+    <Compile Include="Helpers\ScoresDataAccess.cs" />
+    <Compile Include="Helpers\IDatabaseConnection.cs" />
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="Models\Facts.cs" />
     <Compile Include="Models\GameMode.cs" />

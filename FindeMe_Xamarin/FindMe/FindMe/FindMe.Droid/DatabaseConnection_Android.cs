@@ -12,19 +12,17 @@ using SQLite;
 using FindMe.Helpers;
 using FindMe.Droid;
 using System.IO;
+using SQLite.Net;
+
 [assembly: Xamarin.Forms.Dependency(typeof(DatabaseConnection_Android))]
 
 namespace FindMe.Droid
 {
     class DatabaseConnection_Android : IDatabaseConnection
     {
-        public SQLiteConnection DbConnection()
+        public SQLiteConnection GetConnection()
         {
-            var dbName = "CustomersDb.db3";
-            var path = Path.Combine(System.Environment.
-              GetFolderPath(System.Environment.
-              SpecialFolder.Personal), dbName);
-            return new SQLiteConnection(path);
+            throw new NotImplementedException();
         }
     }
 }
