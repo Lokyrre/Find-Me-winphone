@@ -20,8 +20,8 @@ namespace FindMe.Views
             BindingContext = new LeaderboardViewModel();
             typeScore.SelectedIndexChanged += (s, e) =>
             {
-                LeaderboardViewModel l = new LeaderboardViewModel();
-                l.TypeScore = typeScore.SelectedIndex;
+                string value = typeScore.Items[typeScore.SelectedIndex];
+                BindingContext = new LeaderboardViewModel(value);
             };
         }
     }

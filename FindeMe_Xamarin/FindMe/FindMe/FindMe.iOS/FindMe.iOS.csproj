@@ -88,6 +88,7 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DataBaseConnection_iOS.cs" />
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
@@ -125,6 +126,7 @@
       <HintPath>..\..\packages\CarouselView.FormsPlugin.2.7.1\lib\Xamarin.iOS10\CarouselView.FormsPlugin.iOS.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Mono.Data.Sqlite" />
     <Reference Include="Plugin.Geolocator, Version=3.0.4.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xam.Plugin.Geolocator.3.0.4\lib\Xamarin.iOS10\Plugin.Geolocator.dll</HintPath>
       <Private>True</Private>

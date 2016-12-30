@@ -7,7 +7,7 @@
     <Picker SelectedIndex="1" HorizontalOptions="FillAndExpand" x:Name="typeScore">
       <Picker.Items>
         <x:String>Doctor Who</x:String>
-        <x:String>My Little Poney</x:String>
+        <x:String>My Little Pony</x:String>
         <x:String>Pokemon</x:String>
       </Picker.Items>
     </Picker>
