@@ -52,11 +52,12 @@ namespace FindMe.Views
             BindingContext = new OptionsViewModel(); // Recuperation du Username afin de l'afficher dans la page de fin de partie
 
             AddScore();
+            NavigationPage.SetHasBackButton(this, false);
             bRestart.Clicked += OnRestartSelected;
             bMenu.Clicked += OnMenuSelected;
         }
 
-        private void AddScore()
+        private void AddScore() //Ajoute le score dans la base de donnée
         {
             Score score = new Score(Settings.UsernameSettings, Score, Settings.IsHardSettings, Settings.NbrIconSettings, Settings.TypeGameSettings);
             sda.InsertUpdateData(score);
