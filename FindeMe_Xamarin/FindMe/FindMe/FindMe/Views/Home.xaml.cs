@@ -1,4 +1,5 @@
-﻿using FindMe.ViewModels;
+﻿using FindMe.Models;
+using FindMe.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,39 +10,34 @@ using Xamarin.Forms;
 
 namespace FindMe.Views
 {
-    public partial class Home : CarouselPage
+
+    public partial class Home : ContentPage
     {
+        string modeSelected = "Doctor Who";
         public Home()
         {
             InitializeComponent();
             BindingContext = new HomeViewModel();
 
-            bLeaderboardDW.Clicked += OnLeaderboardSelected;
-            bOptionsDW.Clicked += OnOptionsSelected;
-            bNewGameDW.Clicked += OnNewGameDWSelected;
+            bLeaderboard.Clicked += OnLeaderboardSelected;
+            bOptions.Clicked += OnOptionsSelected;
+            bNewGame.Clicked += OnNewGameSelected;
 
-            bLeaderboardP.Clicked += OnLeaderboardSelected;
-            bOptionsP.Clicked += OnOptionsSelected;
-            bNewGameP.Clicked += OnNewGamePSelected;
 
-            bLeaderboardMLP.Clicked += OnLeaderboardSelected;
-            bOptionsMLP.Clicked += OnOptionsSelected;
-            bNewGameMLP.Clicked += OnNewGameMLPSelected;
+
+            CarrouselGameModes.ItemSelected += (sender, args) =>
+            {
+                var mode = args.SelectedItem as GameMode;
+                if (mode == null)
+                    return;
+
+                modeSelected = mode.Name;
+            };
         }
 
-       private void OnNewGameDWSelected(object sender, EventArgs e)
+       private void OnNewGameSelected(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new Game("DoctorWho"));
-        }
-
-        private void OnNewGamePSelected(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new Game("Pokemon"));
-        }
-
-        private void OnNewGameMLPSelected(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new Game("MLP"));
+            Navigation.PushAsync(new Game(modeSelected));
         }
 
         private void OnOptionsSelected(object sender, EventArgs e)

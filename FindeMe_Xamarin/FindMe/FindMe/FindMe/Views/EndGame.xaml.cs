@@ -44,7 +44,7 @@ namespace FindMe.Views
 
         private void AddScore()
         {
-            Score score = new Score(Settings.UsernameSettings, Score, Settings.IsHardSettings, Settings.NbrIconSettings, "Doctor Who");
+            Score score = new Score(Settings.UsernameSettings, Score, Settings.IsHardSettings, Settings.NbrIconSettings, Settings.TypeGameSettings);
             sda.InsertUpdateData(score);
         }
 

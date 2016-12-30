@@ -1,34 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FindMe.Views.Home"
-             xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions">
+             xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView">
 
-  <ContentPage>
-    <StackLayout>
-      <Image Source="logo_find_me.png" HorizontalOptions="Center"/>
-      <Label Text="Doctor Who" VerticalOptions="Center" />
-      <Button x:Name="bNewGameDW" Text="Jouer" />
-      <Button x:Name="bLeaderboardDW" Text="Leaderboard" />
-      <Button x:Name="bOptionsDW" Text="Options" />
+
+    <Grid RowSpacing="0">
+      <Grid.RowDefinitions>
+        <RowDefinition Height=".5*"/>
+        <RowDefinition Height=".5*"/>
+      </Grid.RowDefinitions>
+      <cv:CarouselView ItemsSource="{Binding GameModes}" x:Name="CarrouselGameModes">
+        <cv:CarouselView.ItemTemplate>
+          <DataTemplate>
+            <Grid>
+              <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+              </Grid.RowDefinitions>
+              <Image Grid.RowSpan="2" Aspect="AspectFill" Source="{Binding ImageUrl}"/>
+              <StackLayout Grid.Row="1" BackgroundColor="#80000000" Padding="12">
+                <Label TextColor="White" Text="{Binding Name}" FontSize="16" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+              </StackLayout>
+            </Grid>
+          </DataTemplate>
+        </cv:CarouselView.ItemTemplate>
+      </cv:CarouselView>
+      <StackLayout Grid.Row="2">
+        <Button x:Name="bNewGame" Text="Jouer" />
+        <Button x:Name="bLeaderboard" Text="Leaderboard" />
+        <Button x:Name="bOptions" Text="Options" />
     </StackLayout>
-  </ContentPage>
-  <ContentPage>
-    <StackLayout>
-      <Image Source="logo_find_me.png" HorizontalOptions="Center"/>
-      <Label Text="Pokemon" VerticalOptions="Center" />
-      <Button x:Name="bNewGameP" Text="Jouer" />
-      <Button x:Name="bLeaderboardP" Text="Leaderboard" />
-      <Button x:Name="bOptionsP" Text="Options" />
-    </StackLayout>
-  </ContentPage>
-  <ContentPage>
-    <StackLayout>
-      <Image Source="logo_find_me.png" HorizontalOptions="Center"/>
-      <Label Text="MLP" VerticalOptions="Center" />
-      <Button x:Name="bNewGameMLP" Text="Jouer" />
-      <Button x:Name="bLeaderboardMLP" Text="Leaderboard" />
-      <Button x:Name="bOptionsMLP" Text="Options" />
-    </StackLayout>
-  </ContentPage>
-</CarouselPage>
+    </Grid>
+
+
+</ContentPage>

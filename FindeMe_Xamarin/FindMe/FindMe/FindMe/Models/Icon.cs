@@ -59,7 +59,7 @@ namespace FindMe
             items.Add("dw5");
             items.Add("dw6");
             items.Add("dw7");
-            Settings.ListImageSettings.Add("DoctorWhoWhite", items);
+            Settings.ListImageSettings.Add("Doctor WhoWhite", items);
 
             items = new List<string>();
             items.Add("dwb1");
@@ -69,7 +69,7 @@ namespace FindMe
             items.Add("dwb5");
             items.Add("dwb6");
             items.Add("dwb7");
-            Settings.ListImageSettings.Add("DoctorWhoBlack", items);
+            Settings.ListImageSettings.Add("Doctor WhoBlack", items);
 
             items = new List<string>();
             items.Add("bmlp1");
@@ -79,7 +79,7 @@ namespace FindMe
             items.Add("bmlp5");
             items.Add("bmlp6");
             items.Add("bmlp7");
-            Settings.ListImageSettings.Add("MLPWhite", items);
+            Settings.ListImageSettings.Add("My Little PonyWhite", items);
 
             items = new List<string>();
             items.Add("mlp1");
@@ -89,7 +89,7 @@ namespace FindMe
             items.Add("mlp5");
             items.Add("mlp6");
             items.Add("mlp7");
-            Settings.ListImageSettings.Add("MLPBlack", items);
+            Settings.ListImageSettings.Add("My Little PonyBlack", items);
 
             items = new List<string>();
             items.Add("epkm1");
