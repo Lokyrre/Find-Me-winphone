@@ -125,6 +125,34 @@
       <HintPath>..\..\packages\CarouselView.FormsPlugin.2.7.1\lib\Xamarin.iOS10\CarouselView.FormsPlugin.iOS.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="CrossPlatformLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CrossPlatformLibrary.1.0.73\lib\xamarin.ios10\CrossPlatformLibrary.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrossPlatformLibrary.Geolocation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CrossPlatformLibrary.Geolocation.1.0.25\lib\xamarin.ios10\CrossPlatformLibrary.Geolocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrossPlatformLibrary.Geolocation.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CrossPlatformLibrary.Geolocation.1.0.25\lib\xamarin.ios10\CrossPlatformLibrary.Geolocation.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrossPlatformLibrary.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CrossPlatformLibrary.1.0.73\lib\xamarin.ios10\CrossPlatformLibrary.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Guards, Version=1.0.0.0, Culture=neutral, PublicKeyToken=ac6aedb73a72f46e, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Guards.1.0.10\lib\xamarin.ios10\Guards.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PlatformAdapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6631b0d7444ed877, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CrossPlatformAdapter.1.0.12\lib\xamarin.ios10\PlatformAdapter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Plugin.Geolocator, Version=3.0.4.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xam.Plugin.Geolocator.3.0.4\lib\Xamarin.iOS10\Plugin.Geolocator.dll</HintPath>
       <Private>True</Private>
