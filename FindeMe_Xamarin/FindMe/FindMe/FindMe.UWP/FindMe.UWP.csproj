@@ -96,6 +96,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DataBaseConnection_UWP.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -136,6 +137,7 @@
     <Content Include="epkm5.png" />
     <Content Include="epkm6.png" />
     <Content Include="epkm7.png" />
+    <Content Include="logo_find_me.png" />
     <Content Include="mlp.png" />
     <Content Include="mlp1.png" />
     <Content Include="mlp2.png" />
@@ -176,6 +178,11 @@
       <Project>{c1e13715-664e-40d9-9ec7-9f55840039e1}</Project>
       <Name>FindMe</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="SQLite.UWP.2015, Version=3.15.2">
+      <Name>SQLite for Universal Windows Platform</Name>
+    </SDKReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

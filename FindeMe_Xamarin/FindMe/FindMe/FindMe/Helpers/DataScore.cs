@@ -5,107 +5,47 @@ using System.Text;
 using System.Threading.Tasks;
 using SQLite;
 using System.ComponentModel;
+using SQLite.Net.Attributes;
+using FindMe.Models;
 
 namespace FindMe.Helpers
 {
-    [Table("Scores")]
-    class DataScore : INotifyPropertyChanged
+    public class DataScore
     {
-        private int _id;
+        public DataScore()
+        {
+            Username = "Guest";
+            ValueScore = 0;
+            IsHard = false;
+            NbrIcons = 3;
+            GameMode = "Doctor Who";
+        }
+        public DataScore(Score s)
+        {
+            Username = s.Username;
+            ValueScore = s.ValueScore;
+            IsHard = s.IsHard;
+            NbrIcons = s.NbrIcons;
+            GameMode = s.GameMode;
+        }
+
         [PrimaryKey, AutoIncrement]
-        public int Id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                this._id = value;
-                OnPropertyChanged(nameof(Id));
-            }
-        }
-        private string _username;
+        public int Id { get; set; }
+
         [NotNull]
-        public string Username
-        {
-            get
-            {
-                return _username;
-            }
-            set
-            {
-                this._username = value;
-                OnPropertyChanged(nameof(Username));
-            }
-        }
-        private double _valueScore;
+        public string Username { get; set; }
+
         [NotNull]
-        public double ValueScore
-        {
-            get
-            {
-                return _valueScore;
-            }
-            set
-            {
-                this._valueScore = value;
-                OnPropertyChanged(nameof(ValueScore));
-            }
-        }
-        private Boolean _isHard;
+        public double ValueScore { get; set; }
+
         [NotNull]
-        public Boolean IsHard
-        {
-            get
-            {
-                return _isHard;
-            }
-            set
-            {
-                _isHard = value;
-                OnPropertyChanged(nameof(IsHard));
-            }
-        }
+        public bool IsHard { get; set; }
 
-
-        private int _nbrIcons;
         [NotNull]
-        public int NbrIcons
-        {
-            get
-            {
-                return _nbrIcons;
-            }
+        public int NbrIcons { get; set; }
 
-            set
-            {
-                _nbrIcons = value;
-                OnPropertyChanged(nameof(NbrIcons));
-            }
-        }
-
-        private String _gameMode;
         [NotNull]
-        public string GameMode
-        {
-            get
-            {
-                return _gameMode;
-            }
+        public String GameMode { get; set; }
 
-            set
-            {
-                _gameMode = value;
-                OnPropertyChanged(nameof(GameMode));
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void OnPropertyChanged(string propertyName)
-        {
-            this.PropertyChanged?.Invoke(this,
-              new PropertyChangedEventArgs(propertyName));
-        }
     }
 }

@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using Xamarin.Forms;
+using FindMe.Helpers;
 
 namespace FindMe
 {
@@ -12,8 +12,9 @@ namespace FindMe
         public App()
         {
             // The root page of your application
-            
 
+            var dB = DependencyService.Get<IDatabaseConnection>().GetConnection();
+            dB.CreateTable<DataScore>();
             MainPage = new NavigationPage(new Views.Home());
         }
 

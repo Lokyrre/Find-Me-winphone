@@ -13,6 +13,7 @@ namespace FindMe.Views
     public partial class EndGame : ContentPage
     {
         private double Score;
+        private ScoresDataAccess sda = new ScoresDataAccess();
 
         public EndGame(int score)
         {
@@ -42,22 +43,10 @@ namespace FindMe.Views
         }
 
         private void AddScore()
-         {
-             Score score = new Score(Settings.UsernameSettings, Score, Settings.IsHardSettings, Settings.NbrIconSettings, "Doctor Who");
-             Settings.HighScoresSettings.Sort();
-             if(Settings.HighScoresSettings.Count< 10)
-             {
-                 Settings.HighScoresSettings.Add(score);
-             }
-             else
-             {
-                 if(Settings.HighScoresSettings[9].ValueScore<Score)
-                 {
-                    Settings.HighScoresSettings.RemoveAt(9);
-                    Settings.HighScoresSettings.Add(score);
-                 }
-             }
-         }
+        {
+            Score score = new Score(Settings.UsernameSettings, Score, Settings.IsHardSettings, Settings.NbrIconSettings, "Doctor Who");
+            sda.InsertUpdateData(score);
+        }
 
         private void OnMenuSelected(object sender, EventArgs e)
         {
