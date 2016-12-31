@@ -2,18 +2,18 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FindMe.Views.Options">
-  <StackLayout BackgroundColor="#1976D2">
+  <StackLayout BackgroundColor="#BDBDBD">
     <StackLayout Orientation="Horizontal">
       <Label Text="Nom d'utilisateur :" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand"/>
-      <Entry Text="{Binding Username}" HorizontalOptions="EndAndExpand"/>  
+      <Entry Text="{Binding Username}"/>  
     </StackLayout>
     <StackLayout Orientation="Horizontal">
       <Label Text="Mode Difficile :" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand"/>
-      <Switch IsToggled="{Binding HardGame}" HorizontalOptions="EndAndExpand"/>
+      <Switch IsToggled="{Binding HardGame}"/>
     </StackLayout>
     <StackLayout Orientation="Horizontal">
       <Label Text="Nombre d'icone :" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand"/>
-      <Picker SelectedIndex="{Binding NbIconesIndex}" x:Name="nbIcones" HorizontalOptions="EndAndExpand">
+      <Picker SelectedIndex="{Binding NbIconesIndex}" x:Name="nbIcones">
         <Picker.Items>
           <x:String>3</x:String>
           <x:String>5</x:String>
@@ -23,11 +23,11 @@
     </StackLayout>
     <StackLayout Orientation="Horizontal">
       <Label x:Name="lVib" Text="Vibreur :" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand"/>
-      <Switch x:Name="sVib" IsToggled="{Binding Vibration}" HorizontalOptions="EndAndExpand"/>
+      <Switch x:Name="sVib" IsToggled="{Binding Vibration}"/>
     </StackLayout>
     <StackLayout Orientation="Horizontal">
       <Label Text="Son :" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand"/>
-      <Switch IsToggled="{Binding Sound}" HorizontalOptions="EndAndExpand"/>
+      <Switch IsToggled="{Binding Sound}"/>
     </StackLayout>
   </StackLayout>
 </ContentPage>

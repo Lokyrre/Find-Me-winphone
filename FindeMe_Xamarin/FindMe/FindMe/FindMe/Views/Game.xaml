@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FindMe.Views.Game">
-  <StackLayout x:Name="wrapper" VerticalOptions="FillAndExpand" Padding="0" BackgroundColor="#9E9E9E">
+  <StackLayout x:Name="wrapper" VerticalOptions="FillAndExpand" Padding="0" BackgroundColor="#BDBDBD">
     <AbsoluteLayout x:Name="aLayout" VerticalOptions="FillAndExpand" Margin="0" />
     <StackLayout BackgroundColor="#1976D2">
       <Label x:Name="labelScore" />

@@ -4,7 +4,7 @@
              x:Class="FindMe.Views.Leaderboard">
 
   <ContentPage.Content>
-  <StackLayout BackgroundColor="#1976D2">
+  <StackLayout BackgroundColor="#BDBDBD">
     <StackLayout Orientation="Horizontal">
       <Label Text="Mode de jeu :" VerticalTextAlignment="Center"/>
       <Picker HorizontalOptions="FillAndExpand" x:Name="typeScore">

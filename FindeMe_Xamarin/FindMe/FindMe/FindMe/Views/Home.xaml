@@ -4,7 +4,7 @@
              x:Class="FindMe.Views.Home"
              xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView">
   <ContentPage.Content>
-    <Grid RowSpacing="0" BackgroundColor="#1976D2">
+    <Grid RowSpacing="0" BackgroundColor="#BDBDBD">
       <Grid.RowDefinitions>
         <RowDefinition Height=".5*"/>
         <RowDefinition Height=".5*"/>
@@ -17,7 +17,7 @@
       <cv:CarouselView ItemsSource="{Binding GameModes}" x:Name="CarrouselGameModes"   Grid.ColumnSpan="3">
         <cv:CarouselView.ItemTemplate>
           <DataTemplate>
-            <Grid BackgroundColor="#9E9E9E">
+            <Grid BackgroundColor="White">
               <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>

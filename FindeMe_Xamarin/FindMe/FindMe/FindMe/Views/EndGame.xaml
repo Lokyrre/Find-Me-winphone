@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FindMe.Views.EndGame">
   <ContentPage.Content>
-    <StackLayout BackgroundColor="#1976D2" VerticalOptions="FillAndExpand">
+    <StackLayout BackgroundColor="#BDBDBD" VerticalOptions="FillAndExpand">
       <Image Source="game_over.png" HorizontalOptions="CenterAndExpand"/>
       <Label x:Name="newHighScore" TextColor="Red" FontSize="20" HorizontalOptions="CenterAndExpand"/>
       <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
@@ -14,9 +14,9 @@
       
       <Label Text="Le saviez-vous ?" TextColor="#212121" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand"/>
       <Label x:Name="fact" HorizontalTextAlignment="Center" TextColor="#212121" FontAttributes="Italic"/>
-      <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-        <Button x:Name="bRestart" Text="Rejouer" BackgroundColor="#9E9E9E" TextColor="White" HorizontalOptions="StartAndExpand"/>
-        <Button x:Name="bMenu" Text="Menu" BackgroundColor="#9E9E9E" TextColor="White"  HorizontalOptions="EndAndExpand"/>
+      <StackLayout VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand">
+        <Button x:Name="bRestart" Text="Rejouer" BackgroundColor="#9E9E9E" TextColor="White"/>
+        <Button x:Name="bMenu" Text="Menu" BackgroundColor="#9E9E9E" TextColor="White"/>
       </StackLayout>
     </StackLayout>
   </ContentPage.Content>

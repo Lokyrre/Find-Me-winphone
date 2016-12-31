@@ -1,7 +1,9 @@
 ﻿using FindMe.Helpers;
 using FindMe.Models;
+using Plugin.Geolocator;
 using System;
 using System.Collections.Generic;
+using Xamarin.Forms;
 
 namespace FindMe.ViewModels
 {
@@ -17,8 +19,16 @@ namespace FindMe.ViewModels
         /// <summary>
         /// Ajoute le score dans la base de donnée
         /// </summary>
-        public void AddScore()
+        public async void AddScore()
         {
+            if(Device.OS != TargetPlatform.Windows)
+            {
+                var locator = CrossGeolocator.Current;
+                locator.DesiredAccuracy = 50;
+
+                var position = await locator.GetPositionAsync(timeoutMilliseconds: 10000);
+            }
+            
             Score score = new Score(Settings.UsernameSettings, _score, Settings.IsHardSettings, Settings.NbrIconSettings, Settings.TypeGameSettings);
             sda.InsertUpdateData(score);
         }
