@@ -10,6 +10,7 @@ namespace FindMe.Models
         bool isHard;
         int nbrIcons;
         String gameMode;
+        String localisation;
  
         /// <summary>
         /// Initialise Score avec les valeur Username = "Guest", ValueScore = 0, IsHard = false, NbrIcons = 3 et GameMode = "Doctor Who"
@@ -34,6 +35,7 @@ namespace FindMe.Models
             IsHard = ds.IsHard;
             NbrIcons = ds.NbrIcons;
             GameMode = ds.GameMode;
+            Localisation = ds.Localisation;
         }
 
         /// <summary>
@@ -44,13 +46,15 @@ namespace FindMe.Models
         /// <param name="isHard">La difficulté de la partie</param>
         /// <param name="nbrIcons">Le nombre d'icones de la partie</param>
         /// <param name="gameMode">Le type de jeu</param>
-        public Score(String username, double valueScore, bool isHard, int nbrIcons, String gameMode)
+        /// <param name="localisation">La localisation où a été réalisé le score</param>
+        public Score(String username, double valueScore, bool isHard, int nbrIcons, String gameMode, String localisation)
         {
             this.Username = username;
             this.ValueScore = valueScore;
             this.IsHard = isHard;
             this.NbrIcons = nbrIcons;
             this.GameMode = gameMode;
+            this.Localisation = localisation;
         }
         public string Username
         {
@@ -81,10 +85,16 @@ namespace FindMe.Models
              get { return gameMode; }
              set { gameMode = value; }
          }
- 
-         public int CompareTo(object obj)
-         {
-             return ((Score)obj).ValueScore.CompareTo(this.ValueScore);
-         }
-      }
+
+        public string Localisation
+        {
+            get { return localisation; }
+            set { localisation = value; }
+        }
+
+        public int CompareTo(object obj)
+        {
+            return ((Score)obj).ValueScore.CompareTo(this.ValueScore);
+        }
+    }
 }
