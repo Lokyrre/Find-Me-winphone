@@ -2,6 +2,7 @@
 using FindMe.Helpers;
 using Xamarin.Forms;
 using FindMe.ViewModels;
+using FindMe.Models;
 
 namespace FindMe.Views
 {
@@ -29,12 +30,6 @@ namespace FindMe.Views
 
             bRestart.Clicked += OnRestartSelected;
             bMenu.Clicked += OnMenuSelected;
-        }
-
-        private void AddScore() //Ajoute le score dans la base de donnée
-        {
-            Score score = new Score(Settings.UsernameSettings, Score, Settings.IsHardSettings, Settings.NbrIconSettings, Settings.TypeGameSettings);
-            sda.InsertUpdateData(score);
         }
 
         private async void OnMenuSelected(object sender, EventArgs e)
