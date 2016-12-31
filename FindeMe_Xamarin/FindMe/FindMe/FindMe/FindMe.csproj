@@ -149,6 +149,12 @@
     <Reference Include="Xamarin.iOS">
       <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\Xamarin.iOS\v1.0\Xamarin.iOS.dll</HintPath>
     </Reference>
+    <Reference Include="Plugin.XamJam.Screen.Abstractions">
+      <HintPath>..\..\packages\Xam.Plugins.XamJam.Screen.1.0.6\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\Plugin.XamJam.Screen.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.XamJam.Screen">
+      <HintPath>..\..\packages\Xam.Plugins.XamJam.Screen.1.0.6\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\Plugin.XamJam.Screen.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\Game.xaml">

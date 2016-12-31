@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Plugin.Vibrate;
 using Xamarin.Forms;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 
 namespace FindMe.Views
 {
@@ -18,26 +19,30 @@ namespace FindMe.Views
         private double coefficientTime ;
         private int time;
         private List<double> xPerCent;
-        private List<double> yPerCent;
+		private List<double> yPerCent;
+		private bool stopTranslation;
+		private Dictionary<Image, Rectangle> images;
 
         public Game(string gameType)
         {
-            InitializeComponent();
-            Settings.TypeGameSettings = gameType;
+			InitializeComponent();
             GameViewModel.ClearListItem();
             score = 0;
             addingTime = .2;
             coefficientTime = 0.02;
             time = 10000;
-            Loading();
+			Loading();
         }
 
         public async void Loading()
         {
+			images = new Dictionary<Image, Rectangle>();
             Random r = new Random();
             GameViewModel gvm = new GameViewModel();
             bool isWhiteIntruder = Convert.ToBoolean(r.Next(2));
             int intruder = r.Next(Settings.NbrIconSettings);
+
+			stopTranslation = false;
 
             xPerCent = new List<double>();
             yPerCent = new List<double>();
@@ -45,6 +50,7 @@ namespace FindMe.Views
             for (int i = 0; i < Settings.NbrIconSettings; i++)
             {
                 var img = new Image();
+
 
                 img.HeightRequest = 60;
                 img.WidthRequest = 60;
@@ -56,6 +62,7 @@ namespace FindMe.Views
                     img.Source = ImageSource.FromFile(gvm.Item(isWhiteIntruder, true));
                     tapGestureRecognizer.Tapped += (s, e) =>
                     {
+						stopTranslation = true;
                         if (Settings.IsVibrationEnabledSettings && Device.OS != TargetPlatform.Windows)
                         {
                             CrossVibrate.Current.Vibration(300);
@@ -84,6 +91,7 @@ namespace FindMe.Views
 
                     tapGestureRecognizer.Tapped += (s, e) =>
                     {
+						stopTranslation = true;
                         if (Settings.IsSongEnabledSettings)
                         {
 
@@ -100,37 +108,27 @@ namespace FindMe.Views
                 xPerCent.Add(1.0 * r.Next(100) / 100);
                 yPerCent.Add(1.0 * r.Next(100) / 100);
 
-                AbsoluteLayout.SetLayoutBounds(img, new Rectangle(xPerCent[xPerCent.Count -1], yPerCent[yPerCent.Count - 1], .1, .1));
+				Rectangle rect = new Rectangle(xPerCent[xPerCent.Count - 1], yPerCent[yPerCent.Count - 1], .1, .1);
+                AbsoluteLayout.SetLayoutBounds(img, rect);
                 AbsoluteLayout.SetLayoutFlags(img, AbsoluteLayoutFlags.All);
+
+				images.Add(img,new Rectangle(rect.X,rect.Y,rect.Width,rect.Height));
             }
 
-           // await progress.ProgressTo(0, (uint)time, Easing.Linear);
+			// await progress.ProgressTo(0, (uint)time, Easing.Linear);
 
-            if (Settings.IsHardSettings)
-            {
-                foreach (Image img in aLayout.Children)
-                {
-                    double x;
-                    double y;
-                    if ((Convert.ToBoolean(r.Next(2))))
-                    {
-                        x = 3000;
-                    }
-                    else
-                    {
-                        x = -3000;
-                    }
-                    if ((Convert.ToBoolean(r.Next(2))))
-                    {
-                        y = 3000;
-                    }
-                    else
-                    {
-                        y = -3000;
-                    }
+			if (Settings.IsHardSettings)
+			{
+				List<Image> imageList = new List<Image>();
 
-                    img.TranslateTo(x, y, (uint)time, Easing.Linear);
-                }
+				foreach (var image in images)
+				{
+					imageList.Add(image.Key);
+				}
+				foreach (var image in imageList)
+				{
+					ApplyTranslate(image);
+				}
             }
 
             labelScore.Text = "Score: " + score;
@@ -139,9 +137,42 @@ namespace FindMe.Views
 
             if (progress.Progress == 0)
             {
+				stopTranslation = true;
                 await Navigation.PushAsync(new EndGame(score));
             }
         }
+
+		private void ApplyTranslate(Image oneImage)
+		{
+
+			if (images.ContainsKey(oneImage))
+			{
+				
+				Random r = new Random();
+				Rectangle oldRect = images[oneImage];
+
+				var size = Plugin.XamJam.Screen.CrossScreen.Current.Size;
+
+				double layoutWitdh = size.Width;
+				double layoutHeight = size.Height;
+
+				double newRectX = 1.0 * (r.Next(60) + 20) / 100;
+				double newRectY = 1.0 * (r.Next(60) + 20) / 100;
+
+				double x = (newRectX - oldRect.X) * layoutWitdh;
+				double y = (newRectY - oldRect.Y) * layoutHeight;
+
+				images[oneImage] = new Rectangle(newRectX, newRectY, 0.1, 0.1);
+
+				var task = oneImage.TranslateTo(x, y, (uint)2000, Easing.Linear);
+				task.GetAwaiter().OnCompleted(delegate
+				{
+					if (!stopTranslation)
+						ApplyTranslate(oneImage);
+				});
+
+			}
+		}
 
     }
 }

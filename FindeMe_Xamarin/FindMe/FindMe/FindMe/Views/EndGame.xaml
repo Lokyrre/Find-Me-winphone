@@ -16,7 +16,7 @@
   </ContentPage.Resources>
   <ContentPage.Content>
     <StackLayout>
-      <Label Text="&#13;&#10;&#13;&#10;Partie Terminer&#13;&#10;" HorizontalTextAlignment="Center"/>
+      <Label Text="&#13;&#10;&#13;&#10;Partie Terminée&#13;&#10;" HorizontalTextAlignment="Center"/>
       <Label Text="{Binding Username}" HorizontalTextAlignment="Center"/>
       <Label x:Name="newHighScore" HorizontalTextAlignment="Center"/>
       <Label x:Name="scoreGame" Text="Score : " HorizontalTextAlignment="Center"/>

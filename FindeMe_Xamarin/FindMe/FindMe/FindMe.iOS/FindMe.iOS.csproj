@@ -26,6 +26,7 @@
     <MtouchArch>i386, x86_64</MtouchArch>
     <MtouchLink>None</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
+    <CodesignKey>iPhone Developer: zlayer83@gmail.com (8QBJ6XMB5S)</CodesignKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -228,6 +229,12 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Xamarin.iOS" />
+    <Reference Include="Plugin.XamJam.Screen.Abstractions">
+      <HintPath>..\..\packages\Xam.Plugins.XamJam.Screen.1.0.6\lib\Xamarin.iOS10\Plugin.XamJam.Screen.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.XamJam.Screen">
+      <HintPath>..\..\packages\Xam.Plugins.XamJam.Screen.1.0.6\lib\Xamarin.iOS10\Plugin.XamJam.Screen.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FindMe\FindMe.csproj">
