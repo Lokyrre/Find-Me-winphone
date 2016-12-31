@@ -4,9 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FindMe.ViewModels
 {
@@ -32,8 +29,19 @@ namespace FindMe.ViewModels
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-                
+        
+        /// <summary>
+        /// Affiche la liste des scores
+        /// </summary>
+        /// <param name="typeGame">Le type de jeux par défaut c'est Doctor Who</param>
+        /// <param name="isHard">La difficulté par défaut c'est false</param>
+        /// <param name="nbrIcons">Le nombre d'icones par défaut c'est 3</param>                   
         public LeaderboardViewModel(String typeGame = "Doctor Who", Boolean isHard = false, int nbrIcons = 3)
+        {
+            SetListItem(typeGame, isHard, nbrIcons);
+        }
+
+        public void SetListItem(String typeGame = "Doctor Who", Boolean isHard = false, int nbrIcons = 3)
         {
             ScoresDataAccess sda = new ScoresDataAccess();
             Score s;

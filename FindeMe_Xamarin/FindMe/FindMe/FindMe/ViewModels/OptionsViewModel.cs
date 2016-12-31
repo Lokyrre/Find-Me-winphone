@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FindMe.Helpers;
+﻿using FindMe.Helpers;
 using System.ComponentModel;
 
 namespace FindMe.ViewModels
@@ -110,6 +105,9 @@ namespace FindMe.ViewModels
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        /// <summary>
+        /// Prends les valeur des Settings
+        /// </summary>
         public OptionsViewModel()
         {
             HardGame = Settings.IsHardSettings;

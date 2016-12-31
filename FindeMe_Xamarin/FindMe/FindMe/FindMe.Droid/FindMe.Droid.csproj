@@ -104,6 +104,14 @@
       <HintPath>..\..\packages\Xam.Plugins.Vibrate.2.0.0\lib\MonoAndroid10\Plugin.Vibrate.Abstractions.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Plugin.XamJam.Screen, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugins.XamJam.Screen.1.0.5\lib\MonoAndroid10\Plugin.XamJam.Screen.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Plugin.XamJam.Screen.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugins.XamJam.Screen.1.0.5\lib\MonoAndroid10\Plugin.XamJam.Screen.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="SQLite.Net, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\SQLite.Net.Core-PCL.3.1.1\lib\portable-win8+net45+wp8+wpa81+MonoAndroid1+MonoTouch1\SQLite.Net.dll</HintPath>
       <Private>True</Private>
@@ -193,12 +201,6 @@
       <HintPath>..\..\packages\Xamarin.Forms.2.3.3.175\lib\MonoAndroid10\Xamarin.Forms.Xaml.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Plugin.XamJam.Screen.Abstractions">
-      <HintPath>..\..\packages\Xam.Plugins.XamJam.Screen.1.0.6\lib\MonoAndroid10\Plugin.XamJam.Screen.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Plugin.XamJam.Screen">
-      <HintPath>..\..\packages\Xam.Plugins.XamJam.Screen.1.0.6\lib\MonoAndroid10\Plugin.XamJam.Screen.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataBaseConnection_Android.cs" />
@@ -207,6 +209,7 @@
     <Compile Include="MainApplication.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AudioService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -367,6 +370,10 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\dw2.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\raw\ding_persevy.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets')" />

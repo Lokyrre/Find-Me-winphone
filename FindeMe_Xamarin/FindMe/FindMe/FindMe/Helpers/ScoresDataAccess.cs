@@ -1,21 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using FindMe.Helpers;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 using System.Collections.ObjectModel;
 using FindMe.Models;
 using SQLite.Net;
-using SQLite.Net.Interop;
 
 namespace FindMe.Helpers
 {
     class ScoresDataAccess
     {
-       public ObservableCollection<DataScore> Scores { get; set; }
-
+        public ObservableCollection<DataScore> Scores { get; set; }
+        /// <summary>
+        /// Insert ou Update un DataScore
+        /// </summary>
+        /// <param name="data">Le DataScore à un inserer ou a update</param>
+        /// <returns>L'état de la requête</returns>
         public string InsertUpdateData(DataScore data)
         {
             try
@@ -32,11 +31,16 @@ namespace FindMe.Helpers
             }
         }
 
+        /// <summary>
+        /// Insert ou Update un score
+        /// </summary>
+        /// <param name="s">Le score à un inserer ou a update</param>
+        /// <returns>L'état de la requête</returns>
         public string InsertUpdateData(Score s)
         {
             try
             {
-                DataScore data = new DataScore(s);
+                DataScore data = new DataScore(s); // On caste le score en data score
                 var dB = DependencyService.Get<IDatabaseConnection>().GetConnection();
 
                 if (dB.Insert(data) != 0)
@@ -49,6 +53,13 @@ namespace FindMe.Helpers
             }
         }
 
+        /// <summary>
+        /// Récupère la liste des scores par mode de jeu, de difficulté et de nombres d'icones
+        /// </summary>
+        /// <param name="gameMode">Le type de jeu</param>
+        /// <param name="isHard">La difficulté</param>
+        /// <param name="nbrIcons">Le nombre d'icones</param>
+        /// <returns>La liste des scores</returns>
         public List<DataScore> GetScoreGameMode(string gameMode, Boolean isHard, int nbrIcons)
         {
             try
@@ -63,70 +74,5 @@ namespace FindMe.Helpers
                 return null;
             }
         }
-
-        /*public void AddNewScore()
-        {
-            this.Scores.
-              Add(new DataScore
-              {
-                  Username = "Guest",
-                  ValueScore = 0,
-                  IsHard = false,
-                  NbrIcons = 3,
-                  GameMode = "Doctor Who"
-              });
-        }
-
-        public void AddNewScore(String username, int valueScore, Boolean isHard, int nbrIcons, String gameMode)
-        {
-            this.Scores.
-              Add(new DataScore
-              {
-                  Username = username,
-                  ValueScore = valueScore,
-                  IsHard = isHard,
-                  NbrIcons = nbrIcons,
-                  GameMode = gameMode
-              });
-        }
-
-        public void AddNewScore(Score s)
-        {
-            this.Scores.
-              Add(new DataScore
-              {
-                  Username = s.Username,
-                  ValueScore = s.ValueScore,
-                  IsHard = s.IsHard,
-                  NbrIcons = s.NbrIcons,
-                  GameMode = s.GameMode
-              });
-        }
-
-        public IEnumerable<DataScore> GetFilteredScores(string gameMode)
-        {
-            lock (collisionLock)
-            {
-                var query = from cust in database.Table<DataScore>()
-                            where cust.GameMode == gameMode
-                            select cust;
-                
-                return query.AsEnumerable();
-            }
-        }
-
-        public int DeleteScore(DataScore scoreInstance)
-        {
-            var id = scoreInstance.Id;
-            if (id != 0)
-            {
-                lock (collisionLock)
-                {
-                    database.Delete<DataScore>(id);
-                }
-            }
-            this.Scores.Remove(scoreInstance);
-            return id;
-        }*/
     }
 }

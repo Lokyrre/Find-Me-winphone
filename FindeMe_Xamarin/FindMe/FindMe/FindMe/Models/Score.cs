@@ -1,29 +1,32 @@
 ﻿using FindMe.Helpers;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FindMe.Models
 {
     public class Score : IComparable
     {
-         String username;
-         double valueScore;
-         bool isHard;
-         int nbrIcons;
-         String gameMode;
+        String username;
+        double valueScore;
+        bool isHard;
+        int nbrIcons;
+        String gameMode;
  
-         public Score()
-         {
-             this.Username = "Guest";
-             this.ValueScore = 0;
-             this.IsHard = false;
-             this.NbrIcons = 3;
-             this.GameMode = "Doctor Who";
-         }
+        /// <summary>
+        /// Initialise Score avec les valeur Username = "Guest", ValueScore = 0, IsHard = false, NbrIcons = 3 et GameMode = "Doctor Who"
+        /// </summary>
+        public Score()
+        {
+            this.Username = "Guest";
+            this.ValueScore = 0;
+            this.IsHard = false;
+            this.NbrIcons = 3;
+            this.GameMode = "Doctor Who";
+        }
 
+        /// <summary>
+        /// Initilise un Score avec les valeurs du DataScore
+        /// </summary>
+        /// <param name="ds">DataScore</param>
         public Score(DataScore ds)
         {
             Username = ds.Username;
@@ -32,25 +35,33 @@ namespace FindMe.Models
             NbrIcons = ds.NbrIcons;
             GameMode = ds.GameMode;
         }
- 
-         public Score(String username, double valueScore, bool isHard, int nbrIcons, String gameMode)
-         {
-             this.Username = username;
-             this.ValueScore = valueScore;
-             this.IsHard = isHard;
-             this.NbrIcons = nbrIcons;
-             this.GameMode = gameMode;
-         }
-          public string Username
-         {
-             get { return username; }
-             set { username = value; }
-         }
+
+        /// <summary>
+        /// Initialise un score
+        /// </summary>
+        /// <param name="username">Le nom de l'utilisateur</param>
+        /// <param name="valueScore">Le score de l'utilisateur</param>
+        /// <param name="isHard">La difficulté de la partie</param>
+        /// <param name="nbrIcons">Le nombre d'icones de la partie</param>
+        /// <param name="gameMode">Le type de jeu</param>
+        public Score(String username, double valueScore, bool isHard, int nbrIcons, String gameMode)
+        {
+            this.Username = username;
+            this.ValueScore = valueScore;
+            this.IsHard = isHard;
+            this.NbrIcons = nbrIcons;
+            this.GameMode = gameMode;
+        }
+        public string Username
+        {
+            get { return username; }
+            set { username = value; }
+        }
  
          public double ValueScore
          {
             get { return valueScore; }
-             set { valueScore = value; }
+            set { valueScore = value; }
          }
  
          public bool IsHard

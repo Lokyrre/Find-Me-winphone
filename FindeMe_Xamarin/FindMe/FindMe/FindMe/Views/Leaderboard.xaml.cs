@@ -1,24 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FindMe.Helpers;
 using FindMe.ViewModels;
 using Xamarin.Forms;
-using FindMe.Models;
 
 namespace FindMe.Views
 {
     public partial class Leaderboard : ContentPage
     {
+        private LeaderboardViewModel lvm = new LeaderboardViewModel();
         public Leaderboard()
         {
             Title = "Leaderboard";
             InitializeComponent();
             typeScore.SelectedIndex = 0;
             nbrIcon.SelectedIndex = 0;
-            BindingContext = new LeaderboardViewModel();
+            BindingContext = lvm;
             typeScore.SelectedIndexChanged += (s, e) =>
             {
                 reloadLeaderboard();
@@ -37,10 +32,7 @@ namespace FindMe.Views
 
         private void reloadLeaderboard()
         {
-            string value = typeScore.Items[typeScore.SelectedIndex];
-            bool isHard = switchHard.IsToggled;
-            int nbrIcons = Int32.Parse(nbrIcon.Items[nbrIcon.SelectedIndex]);
-            BindingContext = new LeaderboardViewModel(value, isHard, nbrIcons);
+            lvm.SetListItem(typeScore.Items[typeScore.SelectedIndex], switchHard.IsToggled, Int32.Parse(nbrIcon.Items[nbrIcon.SelectedIndex]));
         }
     }
 }
