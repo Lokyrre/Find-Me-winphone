@@ -117,7 +117,6 @@ namespace FindMe.Views
 				images.Add(img,new Rectangle(rect.X,rect.Y,rect.Width,rect.Height));
             }
 
-			// await progress.ProgressTo(0, (uint)time, Easing.Linear);
 
 			if (Settings.IsHardSettings)
 			{
@@ -166,7 +165,7 @@ namespace FindMe.Views
 
 				images[oneImage] = new Rectangle(newRectX, newRectY, 0.1, 0.1);
 
-				var task = oneImage.TranslateTo(x, y, (uint)2000, Easing.Linear);
+				var task = oneImage.TranslateTo(x, y, (uint)(r.Next(500)+1800), Easing.Linear);
 				task.GetAwaiter().OnCompleted(delegate
 				{
 					if (!stopTranslation)
@@ -178,4 +177,3 @@ namespace FindMe.Views
 
     }
 }
-//Navigation.PushAsync(new EndGame(score));
