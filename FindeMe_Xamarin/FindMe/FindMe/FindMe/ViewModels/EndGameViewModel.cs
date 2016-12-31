@@ -50,11 +50,11 @@ namespace FindMe.ViewModels
             //Condition d'apparaition du message de depassement du meilleur score
             if (listScores.Count > 0 && _score > listScores[0].ValueScore)
             {
-                return "\n Bravo ! Vous avez établi le meilleur score !";
+                return "Bravo ! Vous avez établi le meilleur score !";
             }
             else
             {
-                return "\n Vous pouvez mieux faire... :'(";
+                return "Vous pouvez mieux faire... :'(";
             }
         }
     }

@@ -248,6 +248,7 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\doctorwho_logo.png" />
+    <BundleResource Include="Resources\game_over.png" />
     <Content Include="Resources\logo_find_me.png" />
     <BundleResource Include="Resources\pkm_logo.png" />
     <BundleResource Include="Resources\mlp_logo.png" />

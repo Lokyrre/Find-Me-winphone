@@ -3,24 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FindMe.Views.Home"
              xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView">
-  <ContentPage.Resources>
-    <ResourceDictionary>
-      <Style x:Key="Play" TargetType="Button">
-        <Setter Property="BackgroundColor" Value="#617BC4"/>
-        <Setter Property="FontSize" Value="20" />
-      </Style>
-      <Style x:Key="Option" TargetType="Button">
-        <Setter Property="BackgroundColor" Value="#353535"/>
-        <Setter Property="FontSize" Value="20" />
-      </Style>
-      <Style x:Key="LeaderBoard" TargetType="Button">
-        <Setter Property="BackgroundColor" Value="#E8AD00"/>
-        <Setter Property="FontSize" Value="20" />
-      </Style>
-    </ResourceDictionary>
-  </ContentPage.Resources>
   <ContentPage.Content>
-    <Grid RowSpacing="0">
+    <Grid RowSpacing="0" BackgroundColor="#1976D2">
       <Grid.RowDefinitions>
         <RowDefinition Height=".5*"/>
         <RowDefinition Height=".5*"/>
@@ -33,7 +17,7 @@
       <cv:CarouselView ItemsSource="{Binding GameModes}" x:Name="CarrouselGameModes"   Grid.ColumnSpan="3">
         <cv:CarouselView.ItemTemplate>
           <DataTemplate>
-            <Grid>
+            <Grid BackgroundColor="#9E9E9E">
               <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
@@ -47,9 +31,9 @@
         </cv:CarouselView.ItemTemplate>
       </cv:CarouselView>
       <StackLayout Grid.Row="2"  Grid.Column="1">
-        <Button x:Name="bNewGame" Text="Jouer" Style="{StaticResource Play}" />
-        <Button x:Name="bLeaderboard" Text="Leaderboard" Style="{StaticResource LeaderBoard}" />
-        <Button x:Name="bOptions" Text="Options" Style="{StaticResource Option}" />
+        <Button x:Name="bNewGame" Text="Jouer" BackgroundColor="#9E9E9E" FontSize="20" TextColor="White"/>
+        <Button x:Name="bLeaderboard" Text="Leaderboard" BackgroundColor="#9E9E9E" FontSize="20" TextColor="White"/>
+        <Button x:Name="bOptions" Text="Options" BackgroundColor="#9E9E9E" FontSize="20" TextColor="White"/>
     </StackLayout>
     </Grid>
     </ContentPage.Content>

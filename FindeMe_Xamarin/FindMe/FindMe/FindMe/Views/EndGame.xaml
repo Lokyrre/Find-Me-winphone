@@ -2,41 +2,22 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FindMe.Views.EndGame">
-  <ContentPage.Resources>
-    <ResourceDictionary>
-      <Style x:Key="Replay" TargetType="Button">
-        <Setter Property="BackgroundColor" Value="#617BC4"/>
-        <Setter Property="FontSize" Value="20" />
-      </Style>
-      <Style x:Key="Menu" TargetType="Button">
-        <Setter Property="BackgroundColor" Value="#353535"/>
-        <Setter Property="FontSize" Value="20" />
-      </Style>
-    </ResourceDictionary>
-  </ContentPage.Resources>
   <ContentPage.Content>
-    <StackLayout>
-      <Label Text="&#13;&#10;&#13;&#10;Partie Terminée&#13;&#10;" HorizontalTextAlignment="Center"/>
-      <Label Text="{Binding Username}" HorizontalTextAlignment="Center"/>
-      <Label x:Name="newHighScore" HorizontalTextAlignment="Center"/>
-      <Label x:Name="scoreGame" Text="Score : " HorizontalTextAlignment="Center"/>
-      <Label Text="Le saviez-vous ?" HorizontalTextAlignment="Center"/>
-      <Label x:Name="fact" HorizontalTextAlignment="Center"/>
-      <Grid RowSpacing="0">
-        <Grid.RowDefinitions>
-          <RowDefinition Height=".5*"/>
-          <RowDefinition Height=".5*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-          <ColumnDefinition Width="*" />
-          <ColumnDefinition Width="*" />
-          <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-        <StackLayout Grid.Row="2"  Grid.Column="1">
-          <Button x:Name="bRestart" Text="Rejouer" Style="{StaticResource Replay}" />
-          <Button x:Name="bMenu" Text="Menu" Style="{StaticResource Menu}" />
-        </StackLayout>
-      </Grid>
+    <StackLayout BackgroundColor="#1976D2" VerticalOptions="FillAndExpand">
+      <Image Source="game_over.png" HorizontalOptions="CenterAndExpand"/>
+      <Label x:Name="newHighScore" TextColor="Red" FontSize="20" HorizontalOptions="CenterAndExpand"/>
+      <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+        <Label Text ="Votre Nom : " FontSize="30"/>
+        <Entry x:Name="username" Text="{Binding Username}" TextColor="#212121" FontSize="30"/>
+      </StackLayout>
+      <Label x:Name="scoreGame" Text="Score : " FontSize="30" HorizontalTextAlignment="Center"/>
+      
+      <Label Text="Le saviez-vous ?" TextColor="#212121" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand"/>
+      <Label x:Name="fact" HorizontalTextAlignment="Center" TextColor="#212121" FontAttributes="Italic"/>
+      <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+        <Button x:Name="bRestart" Text="Rejouer" BackgroundColor="#9E9E9E" TextColor="White" HorizontalOptions="StartAndExpand"/>
+        <Button x:Name="bMenu" Text="Menu" BackgroundColor="#9E9E9E" TextColor="White"  HorizontalOptions="EndAndExpand"/>
+      </StackLayout>
     </StackLayout>
   </ContentPage.Content>
 </ContentPage>

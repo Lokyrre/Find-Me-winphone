@@ -371,7 +371,9 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\dw2.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\game_over.png" />
+  </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\raw\ding_persevy.wav" />
   </ItemGroup>

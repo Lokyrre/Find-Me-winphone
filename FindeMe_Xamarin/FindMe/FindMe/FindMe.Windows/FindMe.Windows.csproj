@@ -156,6 +156,7 @@
     <Content Include="epkm5.png" />
     <Content Include="epkm6.png" />
     <Content Include="epkm7.png" />
+    <Content Include="game_over.png" />
     <Content Include="logo_find_me.png" />
     <Content Include="mlp.png" />
     <Content Include="mlp1.png" />
