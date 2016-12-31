@@ -48,7 +48,10 @@ namespace FindMe
 		{
 			throw new NotImplementedException("Vous devez implémenter la méthode Icon.isSuperposed() avant de l'utiliser");
 		}
-
+        
+        /// <summary>
+        /// Créé la liste des icones du jeu
+        /// </summary>
         public static void IconList()
         {
             List<string> items = new List<string>();

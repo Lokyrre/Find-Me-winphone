@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SQLite;
-using System.ComponentModel;
 using SQLite.Net.Attributes;
 using FindMe.Models;
 
@@ -12,7 +6,9 @@ namespace FindMe.Helpers
 {
     public class DataScore
     {
-        //Constructeur
+        /// <summary>
+        /// Constructeur par défaut
+        /// </summary>
         public DataScore()
         {
             Username = "Guest";
@@ -21,8 +17,11 @@ namespace FindMe.Helpers
             NbrIcons = 3;
             GameMode = "Doctor Who";
         }
-
-        //COnstructeur permettant de convertir un Score en DataScore
+        
+        /// <summary>
+        /// Constructeur permettant de convertir un Score en DataScore
+        /// </summary>
+        /// <param name="s">Le score a convertire</param>
         public DataScore(Score s)
         {
             Username = s.Username;
