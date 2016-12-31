@@ -38,6 +38,11 @@ namespace FindMe.ViewModels
         /// <param name="nbrIcons">Le nombre d'icones par défaut c'est 3</param>                   
         public LeaderboardViewModel(String typeGame = "Doctor Who", Boolean isHard = false, int nbrIcons = 3)
         {
+            SetListItem(typeGame, isHard, nbrIcons);
+        }
+
+        public void SetListItem(String typeGame = "Doctor Who", Boolean isHard = false, int nbrIcons = 3)
+        {
             ScoresDataAccess sda = new ScoresDataAccess();
             Score s;
             List<DataScore> listTemp = new List<DataScore>();
