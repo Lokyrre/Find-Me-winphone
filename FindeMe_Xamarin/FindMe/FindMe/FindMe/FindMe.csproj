@@ -70,7 +70,6 @@
       <DependentUpon>Options.xaml</DependentUpon>
       <Generator>MSBuild:Compile</Generator>
     </Compile>
-    <Compile Include="Models\GameCore.cs" />
     <Compile Include="Models\Icon.cs" />
   </ItemGroup>
   <ItemGroup>
