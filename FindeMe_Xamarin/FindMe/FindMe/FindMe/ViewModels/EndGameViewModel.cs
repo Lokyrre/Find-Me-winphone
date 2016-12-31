@@ -28,7 +28,8 @@ namespace FindMe.ViewModels
                 locator.DesiredAccuracy = 50;
 
                 var position = await locator.GetPositionAsync(timeoutMilliseconds: 10000);
-                Score score = new Score(Settings.UsernameSettings, _score, Settings.IsHardSettings, Settings.NbrIconSettings, Settings.TypeGameSettings, position.ToString);
+                string coord = position.Latitude + " ; " + position.Longitude;
+                Score score = new Score(Settings.UsernameSettings, _score, Settings.IsHardSettings, Settings.NbrIconSettings, Settings.TypeGameSettings, coord);
                 sda.InsertUpdateData(score);
             }
             else
