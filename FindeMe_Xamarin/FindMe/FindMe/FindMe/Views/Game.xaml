@@ -2,17 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FindMe.Views.Game">
-  <Grid>
-    <Grid.RowDefinitions>
-      <RowDefinition Height="9.6*" />
-      <RowDefinition Height="0.4*" />
-    </Grid.RowDefinitions>
-    <AbsoluteLayout Grid.Row="0" x:Name="aLayout" AbsoluteLayout.LayoutBounds="0,0,1,1">
-
-    </AbsoluteLayout>
-    <StackLayout Grid.Row="1">
+  <StackLayout x:Name="wrapper" VerticalOptions="FillAndExpand" Padding="0">
+    <AbsoluteLayout x:Name="aLayout" VerticalOptions="FillAndExpand" Margin="0" />
+    <StackLayout>
       <Label x:Name="labelScore" />
       <ProgressBar x:Name="progress" Progress="1" />
     </StackLayout>
-  </Grid>
+  </StackLayout>
 </ContentPage>

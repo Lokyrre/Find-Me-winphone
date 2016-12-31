@@ -65,9 +65,9 @@ namespace FindMe.Views
             sda.InsertUpdateData(score);
         }
 
-        private void OnMenuSelected(object sender, EventArgs e) //Bouton de retour au menu
+        private async void OnMenuSelected(object sender, EventArgs e) //Bouton de retour au menu
         {
-            Navigation.PushAsync(new Home());
+            await Navigation.PopToRootAsync();
         }
 
         private void OnRestartSelected(object sender, EventArgs e) //Bouton permettant de rejouer une partie
