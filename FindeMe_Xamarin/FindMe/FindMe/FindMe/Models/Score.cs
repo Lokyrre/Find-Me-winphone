@@ -47,7 +47,7 @@ namespace FindMe.Models
         /// <param name="nbrIcons">Le nombre d'icones de la partie</param>
         /// <param name="gameMode">Le type de jeu</param>
         /// <param name="localisation">La localisation où a été réalisé le score</param>
-        public Score(String username, double valueScore, bool isHard, int nbrIcons, String gameMode, String localisation)
+        public Score(String username, double valueScore, bool isHard, int nbrIcons, String gameMode, String localisation = null)
         {
             this.Username = username;
             this.ValueScore = valueScore;
