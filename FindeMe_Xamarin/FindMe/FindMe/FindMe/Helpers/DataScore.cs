@@ -16,6 +16,7 @@ namespace FindMe.Helpers
             IsHard = false;
             NbrIcons = 3;
             GameMode = "Doctor Who";
+            Localisation = null;
         }
         
         /// <summary>
@@ -29,6 +30,7 @@ namespace FindMe.Helpers
             IsHard = s.IsHard;
             NbrIcons = s.NbrIcons;
             GameMode = s.GameMode;
+            Localisation = s.Localisation;
         }
 
         //Contenu de la table DataScore de la base SQLite
