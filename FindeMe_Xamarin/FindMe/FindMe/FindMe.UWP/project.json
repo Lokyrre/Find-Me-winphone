@@ -8,6 +8,7 @@
     "Xam.Plugin.Geolocator": "3.0.4",
     "Xam.Plugins.Settings": "2.5.1",
     "Xam.Plugins.Vibrate": "2.0.0",
+    "Xam.Plugins.XamJam.Screen": "1.0.6",
     "Xamarin.Forms": "2.3.3.175",
     "Xamarin.Forms.CarouselView": "2.3.0-pre2"
   },
