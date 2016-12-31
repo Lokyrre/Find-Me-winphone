@@ -20,6 +20,7 @@ namespace FindMe.iOS.Services
         
         public bool PlayWavFile(string fileName)
         {
+			fileName = fileName + ".wav";
             string FilePath = NSBundle.MainBundle.PathForResource(Path.GetFileNameWithoutExtension(fileName),
                         Path.GetExtension(fileName));
             var url = NSUrl.FromString(fileName);

@@ -163,6 +163,7 @@
     <BundleResource Include="Resources\pkm5.png" />
     <BundleResource Include="Resources\pkm6.png" />
     <BundleResource Include="Resources\pkm7.png" />
+    <BundleResource Include="Resources\ding_persevy.wav" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="CarouselView.FormsPlugin.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -250,7 +251,6 @@
     <Content Include="Resources\logo_find_me.png" />
     <BundleResource Include="Resources\pkm_logo.png" />
     <BundleResource Include="Resources\mlp_logo.png" />
-    <Content Include="Sounds\ding_persevy.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.3.175\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.3.175\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
