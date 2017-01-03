@@ -10,9 +10,9 @@
         <RowDefinition Height=".5*"/>
       </Grid.RowDefinitions>
       <Grid.ColumnDefinitions>
+        <ColumnDefinition Width=".1*" />
         <ColumnDefinition Width="*" />
-        <ColumnDefinition Width="*" />
-        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width=".1*" />
       </Grid.ColumnDefinitions>
       <cv:CarouselView ItemsSource="{Binding GameModes}" x:Name="CarrouselGameModes"   Grid.ColumnSpan="3">
         <cv:CarouselView.ItemTemplate>

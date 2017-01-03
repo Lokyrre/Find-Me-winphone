@@ -2,13 +2,8 @@
 using FindMe.ViewModels;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Plugin.Vibrate;
 using Xamarin.Forms;
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
 using FindMe.Services;
 
 namespace FindMe.Views
@@ -174,6 +169,24 @@ namespace FindMe.Views
 
 			}
 		}
+
+        protected override bool OnBackButtonPressed()
+        {
+            time = 0;
+            GameViewModel.ClearListItem();
+            Loading();
+            return true;
+        }
+
+        protected override void OnDisappearing()
+        {
+            if(Device.OS != TargetPlatform.Windows)
+            {
+                time = 0;
+                GameViewModel.ClearListItem();
+                Loading();
+            }
+        }
 
     }
 }

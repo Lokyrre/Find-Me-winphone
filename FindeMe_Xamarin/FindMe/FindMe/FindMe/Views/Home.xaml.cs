@@ -12,6 +12,7 @@ namespace FindMe.Views
         string modeSelected = "Doctor Who";
         public Home()
         {
+            Title = "Find Me !";
             InitializeComponent();
             BindingContext = new HomeViewModel();
             Settings.TypeGameSettings = modeSelected;

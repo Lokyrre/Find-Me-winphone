@@ -2,7 +2,6 @@
 using FindMe.Helpers;
 using Xamarin.Forms;
 using FindMe.ViewModels;
-using FindMe.Models;
 
 namespace FindMe.Views
 {

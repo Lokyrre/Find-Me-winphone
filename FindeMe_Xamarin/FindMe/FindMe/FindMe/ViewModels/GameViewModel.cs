@@ -26,8 +26,8 @@ namespace FindMe.ViewModels
             string gameBlack = Settings.TypeGameSettings + "Black";
 
             // Prends un nombre aléatoir entre 0 et la taille de la liste - 1
-            int indexWhite = r.Next(Settings.ListImageSettings[gameWhite].Count);
-            int indexBlack = r.Next(Settings.ListImageSettings[gameWhite].Count);
+            int indexWhite = r.Next(App.ListImageSettings[gameWhite].Count);
+            int indexBlack = r.Next(App.ListImageSettings[gameWhite].Count);
 
             string item;
 
@@ -36,26 +36,26 @@ namespace FindMe.ViewModels
             {
                 if(intruder)
                 {
-                    item = Settings.ListImageSettings[gameWhite][indexWhite] + ".png";
-                    Settings.ListImageSettings[gameWhite].Remove(Settings.ListImageSettings[gameWhite][indexWhite]);
+                    item = App.ListImageSettings[gameWhite][indexWhite] + ".png";
+                    App.ListImageSettings[gameWhite].Remove(App.ListImageSettings[gameWhite][indexWhite]);
                 }
                 else
                 {
-                    item = Settings.ListImageSettings[gameBlack][indexBlack] + ".png";
-                    Settings.ListImageSettings[gameBlack].Remove(Settings.ListImageSettings[gameWhite][indexBlack]);
+                    item = App.ListImageSettings[gameBlack][indexBlack] + ".png";
+                    App.ListImageSettings[gameBlack].Remove(App.ListImageSettings[gameWhite][indexBlack]);
                 }
             }
             else
             {
                 if (intruder)
                 {
-                    item = Settings.ListImageSettings[gameBlack][indexBlack] + ".png";
-                    Settings.ListImageSettings[gameBlack].Remove(Settings.ListImageSettings[gameWhite][indexWhite]);
+                    item = App.ListImageSettings[gameBlack][indexBlack] + ".png";
+                    App.ListImageSettings[gameBlack].Remove(App.ListImageSettings[gameWhite][indexWhite]);
                 }
                 else
                 {
-                    item = Settings.ListImageSettings[gameWhite][indexWhite] + ".png";
-                    Settings.ListImageSettings[gameWhite].Remove(Settings.ListImageSettings[gameWhite][indexBlack]);
+                    item = App.ListImageSettings[gameWhite][indexWhite] + ".png";
+                    App.ListImageSettings[gameWhite].Remove(App.ListImageSettings[gameWhite][indexBlack]);
                 }
             }
 
@@ -64,7 +64,7 @@ namespace FindMe.ViewModels
 
         public static void ClearListItem()
         {
-            Settings.ListImageSettings.Clear();
+            App.ListImageSettings.Clear();
         }
     }
 }
