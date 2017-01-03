@@ -13,7 +13,8 @@ namespace FindMe.Views
             InitializeComponent();
             typeScore.SelectedIndex = 0;
             nbrIcon.SelectedIndex = 0;
-            BindingContext = lvm;
+			reloadLeaderboard();
+			BindingContext = lvm;
             typeScore.SelectedIndexChanged += (s, e) =>
             {
                 reloadLeaderboard();

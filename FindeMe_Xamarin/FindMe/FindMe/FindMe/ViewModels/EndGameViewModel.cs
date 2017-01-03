@@ -1,4 +1,4 @@
-﻿using CoreLocation;
+﻿//using CoreLocation;
 using FindMe.Helpers;
 using FindMe.Models;
 using Plugin.Geolocator;
