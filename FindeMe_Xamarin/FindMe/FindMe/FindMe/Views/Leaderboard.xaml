@@ -36,6 +36,7 @@
             <Grid>
               <Label Text="{Binding Username}" FontAttributes="Bold" />
               <Label Grid.Column="1" Text="{Binding ValueScore}" />
+              <Label Grid.Column="2" Text="{Binding Localisation}" />
             </Grid>
           </ViewCell>
         </DataTemplate>
