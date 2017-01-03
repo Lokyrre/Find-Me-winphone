@@ -59,6 +59,16 @@ namespace FindMe.ViewModels
 
             //Tri de la liste
             listScore.Sort();
+
+            //Affichage du top 10 des scores
+            if(listScore.Count > 10)
+            {
+                int sizeList = listScore.Count - 1;
+                for(int i = sizeList; i >= 10; i--)
+                {
+                    listScore.RemoveAt(i);
+                }
+            }
             ListItems = new ObservableCollection<Score>(listScore);
         }
     }
