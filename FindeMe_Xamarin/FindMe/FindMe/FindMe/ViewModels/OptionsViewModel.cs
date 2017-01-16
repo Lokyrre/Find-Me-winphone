@@ -6,7 +6,6 @@ namespace FindMe.ViewModels
     class OptionsViewModel : INotifyPropertyChanged
     {
         private static bool hardGame;
-        private static bool sound;
         private static bool vibration;
         private static int nbIconesIndex;
         private static int nbIcones;
@@ -20,21 +19,6 @@ namespace FindMe.ViewModels
                 hardGame = value;
                 Settings.IsHardSettings = hardGame;
                 OnPropertyChanged("HardGame");
-            }
-        }
-
-        public bool Sound
-        {
-            get
-            {
-                return sound;
-            }
-
-            set
-            {
-                sound = value;
-                Settings.IsSongEnabledSettings = sound;
-                OnPropertyChanged("Sound");
             }
         }
 
@@ -111,7 +95,6 @@ namespace FindMe.ViewModels
         public OptionsViewModel()
         {
             HardGame = Settings.IsHardSettings;
-            Sound = Settings.IsSongEnabledSettings;
             Vibration = Settings.IsVibrationEnabledSettings;
             NbIconesIndex = Settings.NbrIconIndexSettings;
             NbIcones = Settings.NbrIconSettings;

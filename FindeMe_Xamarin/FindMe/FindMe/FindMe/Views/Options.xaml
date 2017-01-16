@@ -25,9 +25,5 @@
       <Label x:Name="lVib" Text="Vibreur :" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand"/>
       <Switch x:Name="sVib" IsToggled="{Binding Vibration}"/>
     </StackLayout>
-    <StackLayout Orientation="Horizontal">
-      <Label Text="Son :" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand"/>
-      <Switch IsToggled="{Binding Sound}"/>
-    </StackLayout>
   </StackLayout>
 </ContentPage>

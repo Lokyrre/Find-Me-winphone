@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using Plugin.Vibrate;
 using Xamarin.Forms;
-using FindMe.Services;
 
 namespace FindMe.Views
 {
@@ -84,10 +83,6 @@ namespace FindMe.Views
                     tapGestureRecognizer.Tapped += (s, e) =>
                     {
 						stopTranslation = true;
-                        if (Settings.IsSongEnabledSettings)
-                        {
-                            DependencyService.Get<IAudio>().PlayWavFile("ding_persevy");
-                        }
 
                         if (Settings.IsVibrationEnabledSettings && Device.OS != TargetPlatform.Windows)
                         {

@@ -44,7 +44,6 @@
     <Compile Include="Models\GameMode.cs" />
     <Compile Include="Models\Score.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\IAudio.cs" />
     <Compile Include="ViewModels\EndGameViewModel.cs" />
     <Compile Include="ViewModels\GameViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />

@@ -36,10 +36,7 @@ namespace FindMe.Helpers
 
         private const string HighScoresKey = "highScores_Key";
         private static readonly List<Score> HighScoresDefault = new List<Score>();
-
-        private const string IsSongEnabledKey = "isSongEnabled_key";
-        private static readonly bool IsSongEnabledDefault = true;
-
+       
         private const string IsVibrationEnabledKey = "isVibrationEnabledKey";
         private static readonly bool IsVibrationEnabledDefault = true;
 
@@ -111,19 +108,7 @@ namespace FindMe.Helpers
                 AppSettings.AddOrUpdateValue<List<Score>>(HighScoresKey, value);
             }
         }
-
-        public static bool IsSongEnabledSettings
-        {
-            get
-            {
-                return AppSettings.GetValueOrDefault<bool>(IsSongEnabledKey, IsSongEnabledDefault);
-            }
-            set
-            {
-                AppSettings.AddOrUpdateValue<bool>(IsSongEnabledKey, value);
-            }
-        }
-
+        
         public static bool IsVibrationEnabledSettings
         {
             get
